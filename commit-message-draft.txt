@@ -1,0 +1,40 @@
+src/openssl.c: avoid PEM_write_bio_OCSP_RESPONSE() to fix C23 builds
+
+In C23 an empty parameter list means (void), so the (int (*)()) cast
+in OpenSSL's PEM_write_bio_OCSP_RESPONSE() macro yields int (*)(void),
+which doesn't match PEM_ASN1_write_bio()'s i2d_of_void * parameter.
+GCC 14+ and Clang 16+ reject that, and GCC 15 compiles C23 by default,
+so on Ubuntu 25.10 (GCC 15.2, OpenSSL 3.5.3) `luarocks install luaossl`
+fails in or_toPEM(), the only code in luaossl that hits this:
+
+    src/openssl.c:12452:14: error: passing argument 1 of 'PEM_ASN1_write_bio' from incompatible pointer type [-Wincompatible-pointer-types]
+
+OpenSSL fixed the cast in 0b7afd6d (openssl/openssl#29048) for 4.0.0
+and backported it to 3.0.19, 3.3.6, 3.4.4, 3.5.5 and 3.6.1. Earlier
+releases, including all of 1.1.1, 3.1 and 3.2, and LibreSSL 4.3.3
+still have the old cast.
+
+While PEM_write_bio_OCSP_RESPONSE is a macro, call PEM_ASN1_write_bio()
+with the arguments the fixed macro expands to; if it ever becomes a
+function, the #else branch calls it. Built with -std=gnu17, the object
+file is byte-for-byte identical to before (GCC 14.2 and Clang 18.1,
+OpenSSL 3.0.13).
+
+Tested:
+- GCC 15.2 in its default C23 mode, with the 20260910-0 rockspec:
+  fails before and builds after on Ubuntu 25.10 (OpenSSL 3.5.3);
+  Ubuntu 26.04 (OpenSSL 3.5.5) builds either way.
+- Compiling src/openssl.c with GCC 14.2 and Clang 18.1, -std=gnu17
+  and -std=gnu23, against OpenSSL 1.1.1w, 3.0.13 and 4.0.3 headers:
+  before, C23 fails except with 4.0.3; after, all compile, with the
+  same -Wall -Wextra warnings as the unpatched gnu17 build.
+- Lua 5.4 and cqueues against `openssl s_server -status_file`:
+  toPEM() returns the PEM of the stapled response on OpenSSL 3.0.13,
+  3.5.3 and 3.5.5, the same as the unpatched module built with
+  -std=gnu17.
+- With the macro replaced by a function declaration, the #else branch
+  compiles with both compilers and calls that function.
+
+Refs #220
+
+Co-Authored-By: Claude <noreply@anthropic.com>

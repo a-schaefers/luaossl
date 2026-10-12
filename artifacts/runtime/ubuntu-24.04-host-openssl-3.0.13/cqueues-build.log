@@ -1,0 +1,143 @@
+Warning: unmatched variable LUA_LIBDIR
+enabling Lua 5.1
+enabling Lua 5.4
+cp /srv/verify/work/rt-host/cqueues/config.h.guess /srv/verify/work/rt-host/cqueues/config.h
+cp /srv/verify/work/rt-host/cqueues/config.h /srv/verify/work/rt-host/cqueues/src/config.h
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/cqueues.o /srv/verify/work/rt-host/cqueues/src/cqueues.c
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/socket.o /srv/verify/work/rt-host/cqueues/src/socket.c
+cd /srv/verify/work/rt-host/cqueues/src && m4 /srv/verify/work/rt-host/cqueues/src/errno.c.m4 >| /srv/verify/work/rt-host/cqueues/src/errno.c.tmp
+mv /srv/verify/work/rt-host/cqueues/src/errno.c.tmp /srv/verify/work/rt-host/cqueues/src/errno.c
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/errno.o /srv/verify/work/rt-host/cqueues/src/errno.c
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/signal.o /srv/verify/work/rt-host/cqueues/src/signal.c
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/thread.o /srv/verify/work/rt-host/cqueues/src/thread.c
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/notify.o /srv/verify/work/rt-host/cqueues/src/notify.c
+mkdir -p /srv/verify/work/rt-host/cqueues/src/5.4
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /srv/verify/work/rt-host/cqueues/src/5.4/dns.o /srv/verify/work/rt-host/cqueues/src/dns.c
+cp /srv/verify/work/rt-host/cqueues/config.h /srv/verify/work/rt-host/cqueues/src/lib/config.h
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DSOCKET_DEBUG -DHAVE_CONFIG_H -DDNS_RANDOM=RAND_bytes -c -o /srv/verify/work/rt-host/cqueues/src/lib/socket.o /srv/verify/work/rt-host/cqueues/src/lib/socket.c
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DSOCKET_DEBUG -DHAVE_CONFIG_H -DDNS_RANDOM=RAND_bytes -c -o /srv/verify/work/rt-host/cqueues/src/lib/dns.o /srv/verify/work/rt-host/cqueues/src/lib/dns.c
+In function 'dns_so_tcp_send',
+    inlined from 'dns_so_check' at /srv/verify/work/rt-host/cqueues/src/lib/dns.c:6678:16:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.c:6547:24: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6547 |         so->query->data[-2] = 0xff & (so->query->end >> 8);
+      |         ~~~~~~~~~~~~~~~^~~~
+In file included from /srv/verify/work/rt-host/cqueues/src/lib/dns.c:83:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_send',
+    inlined from 'dns_so_check' at /srv/verify/work/rt-host/cqueues/src/lib/dns.c:6678:16:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.c:6548:24: warning: array subscript -1 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6548 |         so->query->data[-1] = 0xff & (so->query->end >> 0);
+      |         ~~~~~~~~~~~~~~~^~~~
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_send',
+    inlined from 'dns_so_check' at /srv/verify/work/rt-host/cqueues/src/lib/dns.c:6678:16:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.c:6550:16: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6550 |         qsrc = &so->query->data[-2] + so->qout;
+      |                ^~~~~~~~~~~~~~~~~~~~
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_recv',
+    inlined from 'dns_so_check' at /srv/verify/work/rt-host/cqueues/src/lib/dns.c:6684:16:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.c:6576:24: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6576 |                 asrc = &so->answer->data[-2];
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_recv',
+    inlined from 'dns_so_check' at /srv/verify/work/rt-host/cqueues/src/lib/dns.c:6684:16:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.c:6587:39: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6587 |                         alen = ((0xff & so->answer->data[-2]) << 8)
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_recv',
+    inlined from 'dns_so_check' at /srv/verify/work/rt-host/cqueues/src/lib/dns.c:6684:16:
+/srv/verify/work/rt-host/cqueues/src/lib/dns.c:6588:63: warning: array subscript -1 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6588 |                              | ((0xff & so->answer->data[-1]) << 0);
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/srv/verify/work/rt-host/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+gcc-14 -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DSOCKET_DEBUG -DHAVE_CONFIG_H -DDNS_RANDOM=RAND_bytes -c -o /srv/verify/work/rt-host/cqueues/src/lib/notify.o /srv/verify/work/rt-host/cqueues/src/lib/notify.c
+ar cr /srv/verify/work/rt-host/cqueues/src/lib/libnonlua.a /srv/verify/work/rt-host/cqueues/src/lib/socket.o /srv/verify/work/rt-host/cqueues/src/lib/dns.o /srv/verify/work/rt-host/cqueues/src/lib/notify.o
+ranlib /srv/verify/work/rt-host/cqueues/src/lib/libnonlua.a
+gcc-14 -o /srv/verify/work/rt-host/cqueues/src/5.4/cqueues.so /srv/verify/work/rt-host/cqueues/src/5.4/cqueues.o /srv/verify/work/rt-host/cqueues/src/5.4/socket.o /srv/verify/work/rt-host/cqueues/src/5.4/errno.o /srv/verify/work/rt-host/cqueues/src/5.4/signal.o /srv/verify/work/rt-host/cqueues/src/5.4/thread.o /srv/verify/work/rt-host/cqueues/src/5.4/notify.o /srv/verify/work/rt-host/cqueues/src/5.4/dns.o /srv/verify/work/rt-host/cqueues/src/lib/libnonlua.a -shared  -L -L -shared -L"/usr/lib/x86_64-linux-gnu" -L"/usr/lib/x86_64-linux-gnu"  -lssl -lcrypto -lpthread -ldl -lrt -lm
+enabling Lua 5.1
+enabling Lua 5.4
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lib
+cp -p /srv/verify/work/rt-host/cqueues/src/5.4/cqueues.so /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lib/_cqueues.so
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/cqueues.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua
+cp -p /srv/verify/work/rt-host/cqueues/src/cqueues.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/socket.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/socket.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/socket.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/errno.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/errno.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/errno.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/signal.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/signal.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/signal.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/thread.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/thread.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/thread.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/notify.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/notify.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/notify.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/condition.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/condition.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/condition.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/promise.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/promise.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/promise.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/auxlib.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/auxlib.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/auxlib.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.resolver.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.resolver.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/resolver.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.config.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.config.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/config.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.hosts.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.hosts.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/hosts.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.hints.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.hints.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/hints.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.record.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.record.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/record.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.packet.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.packet.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/packet.lua
+/usr/bin/luac5.4 -p /srv/verify/work/rt-host/cqueues/src/dns.resolvers.lua
+mkdir -p /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /srv/verify/work/rt-host/cqueues/src/dns.resolvers.lua /srv/verify/work/rt-host/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/resolvers.lua
+
+cqueues 20261006.54-0 depends on lua 5.4 (5.4-1 provided by VM)
+No existing manifest. Attempting to rebuild...
+cqueues 20261006.54-0 is now installed in /srv/verify/work/rt-host/tree-cq (license: MIT/X11)
+

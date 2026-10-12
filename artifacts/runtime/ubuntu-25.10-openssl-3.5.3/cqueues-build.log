@@ -1,0 +1,151 @@
+Warning: unmatched variable LUA_LIBDIR
+enabling Lua 5.1
+enabling Lua 5.4
+cp /build/rt/cqueues/config.h.guess /build/rt/cqueues/config.h
+cp /build/rt/cqueues/config.h /build/rt/cqueues/src/config.h
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/cqueues.o /build/rt/cqueues/src/cqueues.c
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/socket.o /build/rt/cqueues/src/socket.c
+cd /build/rt/cqueues/src && m4 /build/rt/cqueues/src/errno.c.m4 >| /build/rt/cqueues/src/errno.c.tmp
+mv /build/rt/cqueues/src/errno.c.tmp /build/rt/cqueues/src/errno.c
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/errno.o /build/rt/cqueues/src/errno.c
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/signal.o /build/rt/cqueues/src/signal.c
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/thread.o /build/rt/cqueues/src/thread.c
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/notify.o /build/rt/cqueues/src/notify.c
+mkdir -p /build/rt/cqueues/src/5.4
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -DLUA_COMPAT_APIINTCASTS -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DCOMPAT53_PREFIX=cqueues -DCQUEUES_VENDOR='"quae@daurnimator.com"' -DCQUEUES_VERSION=20261006L -DCQUEUES_COMMIT='"4820fa05a6dd563578af0ba0067563f60910efd8"' -c -o /build/rt/cqueues/src/5.4/dns.o /build/rt/cqueues/src/dns.c
+cp /build/rt/cqueues/config.h /build/rt/cqueues/src/lib/config.h
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DSOCKET_DEBUG -DHAVE_CONFIG_H -DDNS_RANDOM=RAND_bytes -c -o /build/rt/cqueues/src/lib/socket.o /build/rt/cqueues/src/lib/socket.c
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DSOCKET_DEBUG -DHAVE_CONFIG_H -DDNS_RANDOM=RAND_bytes -c -o /build/rt/cqueues/src/lib/dns.o /build/rt/cqueues/src/lib/dns.c
+/build/rt/cqueues/src/lib/dns.c: In function 'dns_aaaa_arpa':
+/build/rt/cqueues/src/lib/dns.c:3116:46: warning: initializer-string for array of 'unsigned char' truncates NUL terminator but destination lacks 'nonstring' attribute (17 chars into 16 available) [-Wunterminated-string-initialization]
+ 3116 |         static const unsigned char hex[16] = "0123456789abcdef";
+      |                                              ^~~~~~~~~~~~~~~~~~
+/build/rt/cqueues/src/lib/dns.c: In function 'dns_sshfp_print':
+/build/rt/cqueues/src/lib/dns.c:3809:46: warning: initializer-string for array of 'unsigned char' truncates NUL terminator but destination lacks 'nonstring' attribute (17 chars into 16 available) [-Wunterminated-string-initialization]
+ 3809 |         static const unsigned char hex[16] = "0123456789abcdef";
+      |                                              ^~~~~~~~~~~~~~~~~~
+In function 'dns_so_tcp_send',
+    inlined from 'dns_so_check' at /build/rt/cqueues/src/lib/dns.c:6678:16:
+/build/rt/cqueues/src/lib/dns.c:6547:24: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6547 |         so->query->data[-2] = 0xff & (so->query->end >> 8);
+      |         ~~~~~~~~~~~~~~~^~~~
+In file included from /build/rt/cqueues/src/lib/dns.c:83:
+/build/rt/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/build/rt/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_send',
+    inlined from 'dns_so_check' at /build/rt/cqueues/src/lib/dns.c:6678:16:
+/build/rt/cqueues/src/lib/dns.c:6548:24: warning: array subscript -1 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6548 |         so->query->data[-1] = 0xff & (so->query->end >> 0);
+      |         ~~~~~~~~~~~~~~~^~~~
+/build/rt/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/build/rt/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_send',
+    inlined from 'dns_so_check' at /build/rt/cqueues/src/lib/dns.c:6678:16:
+/build/rt/cqueues/src/lib/dns.c:6550:16: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6550 |         qsrc = &so->query->data[-2] + so->qout;
+      |                ^~~~~~~~~~~~~~~~~~~~
+/build/rt/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/build/rt/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_recv',
+    inlined from 'dns_so_check' at /build/rt/cqueues/src/lib/dns.c:6684:16:
+/build/rt/cqueues/src/lib/dns.c:6576:24: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6576 |                 asrc = &so->answer->data[-2];
+      |                        ^~~~~~~~~~~~~~~~~~~~~
+/build/rt/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/build/rt/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_recv',
+    inlined from 'dns_so_check' at /build/rt/cqueues/src/lib/dns.c:6684:16:
+/build/rt/cqueues/src/lib/dns.c:6587:39: warning: array subscript -2 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6587 |                         alen = ((0xff & so->answer->data[-2]) << 8)
+      |                                 ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+/build/rt/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/build/rt/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+In function 'dns_so_tcp_recv',
+    inlined from 'dns_so_check' at /build/rt/cqueues/src/lib/dns.c:6684:16:
+/build/rt/cqueues/src/lib/dns.c:6588:63: warning: array subscript -1 is below array bounds of 'unsigned char[1]' [-Warray-bounds=]
+ 6588 |                              | ((0xff & so->answer->data[-1]) << 0);
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+/build/rt/cqueues/src/lib/dns.h: In function 'dns_so_check':
+/build/rt/cqueues/src/lib/dns.h:422:31: note: while referencing 'data'
+  422 |                 unsigned char data[1];
+      |                               ^~~~
+gcc -O2 -std=gnu99 -fPIC -g -Wall -Wextra  -Wno-missing-field-initializers  -Wno-override-init -Wno-unused -O2 -fPIC -std=gnu17 -D_REENTRANT -D_THREAD_SAFE -D_GNU_SOURCE -I"/usr/include" -I"/usr/include" -DSOCKET_DEBUG -DHAVE_CONFIG_H -DDNS_RANDOM=RAND_bytes -c -o /build/rt/cqueues/src/lib/notify.o /build/rt/cqueues/src/lib/notify.c
+ar cr /build/rt/cqueues/src/lib/libnonlua.a /build/rt/cqueues/src/lib/socket.o /build/rt/cqueues/src/lib/dns.o /build/rt/cqueues/src/lib/notify.o
+ranlib /build/rt/cqueues/src/lib/libnonlua.a
+gcc -o /build/rt/cqueues/src/5.4/cqueues.so /build/rt/cqueues/src/5.4/cqueues.o /build/rt/cqueues/src/5.4/socket.o /build/rt/cqueues/src/5.4/errno.o /build/rt/cqueues/src/5.4/signal.o /build/rt/cqueues/src/5.4/thread.o /build/rt/cqueues/src/5.4/notify.o /build/rt/cqueues/src/5.4/dns.o /build/rt/cqueues/src/lib/libnonlua.a -shared  -L -L -shared -L"/usr/lib/x86_64-linux-gnu" -L"/usr/lib/x86_64-linux-gnu"  -lssl -lcrypto -lpthread -ldl -lrt -lm
+enabling Lua 5.1
+enabling Lua 5.4
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lib
+cp -p /build/rt/cqueues/src/5.4/cqueues.so /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lib/_cqueues.so
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/cqueues.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua
+cp -p /build/rt/cqueues/src/cqueues.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/socket.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/socket.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/socket.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/errno.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/errno.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/errno.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/signal.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/signal.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/signal.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/thread.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/thread.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/thread.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/notify.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/notify.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/notify.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/condition.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/condition.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/condition.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/promise.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/promise.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/promise.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/auxlib.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/auxlib.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/auxlib.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues
+cp -p /build/rt/cqueues/src/dns.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.resolver.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.resolver.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/resolver.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.config.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.config.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/config.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.hosts.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.hosts.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/hosts.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.hints.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.hints.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/hints.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.record.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.record.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/record.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.packet.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.packet.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/packet.lua
+/usr/bin/luac5.4 -p /build/rt/cqueues/src/dns.resolvers.lua
+mkdir -p /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns
+cp -p /build/rt/cqueues/src/dns.resolvers.lua /build/rt/tree-cq/lib/luarocks/rocks-5.4/cqueues/20261006.54-0/lua/cqueues/dns/resolvers.lua
+
+cqueues 20261006.54-0 depends on lua 5.4 (5.4-1 provided by VM)
+No existing manifest. Attempting to rebuild...
+cqueues 20261006.54-0 is now installed in /build/rt/tree-cq (license: MIT/X11)
+

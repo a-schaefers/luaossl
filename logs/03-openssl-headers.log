@@ -1,0 +1,48 @@
+=== START 2026-10-12T07:06:57Z openssl headers
++ cd /srv/verify/src/openssl-1.1.1w
++ ./config no-shared no-asm
++ make -s include/openssl/opensslconf.h
++ cd /srv/verify/src/openssl-4.0.3
++ ./Configure no-shared no-asm
++ make -s build_generated
+DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, COMMENT, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
+DEBUG: LIBDIR = , libdir =  => LIBDIR = 
+DEBUG: PREFIX = . => PREFIX = /srv/verify/src/openssl-4.0.3
+DEBUG: libdir =  => libdir = /srv/verify/src/openssl-4.0.3
+DEBUG: BINDIR = apps => BINDIR = /srv/verify/src/openssl-4.0.3/apps, BINDIR_REL_PREFIX = apps
+DEBUG: LIBDIR =  => LIBDIR = /srv/verify/src/openssl-4.0.3, LIBDIR_REL_PREFIX = 
+DEBUG: INCLUDEDIR = [ include, ./include ] => INCLUDEDIR = [ /srv/verify/src/openssl-4.0.3/include, /srv/verify/src/openssl-4.0.3/include ], INCLUDEDIR_REL_PREFIX = [ include, ./include ]
+DEBUG: APPLINKDIR = ms => APPLINKDIR = /srv/verify/src/openssl-4.0.3/ms, APPLINKDIR_REL_PREFIX = ms
+DEBUG: MODULESDIR = providers => MODULESDIR = /srv/verify/src/openssl-4.0.3/providers, MODULESDIR_REL_LIBDIR = providers
+DEBUG: PKGCONFIGDIR =  => PKGCONFIGDIR = /srv/verify/src/openssl-4.0.3, PKGCONFIGDIR_REL_LIBDIR = 
+DEBUG: CMAKECONFIGDIR =  => CMAKECONFIGDIR = /srv/verify/src/openssl-4.0.3, CMAKECONFIGDIR_REL_LIBDIR = 
+DEBUG: all keys: APPLINKDIR, BINDIR, CMAKECONFIGDIR, COMMENT, INCLUDEDIR, LDLIBS, LIBDIR, MODULESDIR, PKGCONFIGDIR, PREFIX, VERSION, libdir
+DEBUG: LIBDIR = lib64, libdir = /usr/local/lib64 => LIBDIR = lib64
+No value given for COMMENT
+DEBUG: PREFIX = /usr/local => PREFIX = /usr/local
+DEBUG: libdir = /usr/local/lib64 => libdir = /usr/local/lib64
+DEBUG: BINDIR = bin => BINDIR = /usr/local/bin, BINDIR_REL_PREFIX = bin
+DEBUG: LIBDIR = lib64 => LIBDIR = /usr/local/lib64, LIBDIR_REL_PREFIX = lib64
+DEBUG: INCLUDEDIR = include => INCLUDEDIR = /usr/local/include, INCLUDEDIR_REL_PREFIX = include
+DEBUG: APPLINKDIR = include/openssl => APPLINKDIR = /usr/local/include/openssl, APPLINKDIR_REL_PREFIX = include/openssl
+DEBUG: MODULESDIR = /usr/local/lib64/ossl-modules => MODULESDIR = /usr/local/lib64/ossl-modules, MODULESDIR_REL_LIBDIR = ossl-modules
+DEBUG: PKGCONFIGDIR = /usr/local/lib64/pkgconfig => PKGCONFIGDIR = /usr/local/lib64/pkgconfig, PKGCONFIGDIR_REL_LIBDIR = pkgconfig
+DEBUG: CMAKECONFIGDIR = /usr/local/lib64/cmake/OpenSSL => CMAKECONFIGDIR = /usr/local/lib64/cmake/OpenSSL, CMAKECONFIGDIR_REL_LIBDIR = cmake/OpenSSL
+Use of uninitialized value in concatenation (.) or string at util/mkinstallvars.pl line 137.
++ set +x
+--- /srv/verify/src/openssl-1.1.1w (git e04bd3433fd84e1861bf258ea37928d9845e6a86)
+# define OPENSSL_VERSION_TEXT    "OpenSSL 1.1.1w  11 Sep 2023"
+#  define PEM_write_bio_OCSP_RESPONSE(bp,o) \
+    PEM_ASN1_write_bio((int (*)())i2d_OCSP_RESPONSE,PEM_STRING_OCSP_RESPONSE,\
+                        bp,(char *)(o), NULL,NULL,0,NULL,NULL)
+--- /srv/verify/src/openssl-4.0.3 (git af1775b60dfa141a4ad762585052cabeb9f37e9e)
+# define OPENSSL_VERSION_TEXT "OpenSSL 4.0.3 29 Sep 2026"
+#define PEM_write_bio_OCSP_RESPONSE(bp, o)                                         \
+    PEM_ASN1_write_bio((i2d_of_void *)i2d_OCSP_RESPONSE, PEM_STRING_OCSP_RESPONSE, \
+        bp, (char *)(o), NULL, NULL, 0, NULL, NULL)
+--- host /usr/include (libssl-dev 3.0.13-0ubuntu3.16)
+# define OPENSSL_VERSION_TEXT "OpenSSL 3.0.13 30 Jan 2024"
+#  define PEM_write_bio_OCSP_RESPONSE(bp,o) \
+    PEM_ASN1_write_bio((int (*)())i2d_OCSP_RESPONSE,PEM_STRING_OCSP_RESPONSE,\
+                        bp,(char *)(o), NULL,NULL,0,NULL,NULL)
+=== END 2026-10-12T07:07:22Z openssl headers

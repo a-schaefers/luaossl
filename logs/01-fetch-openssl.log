@@ -1,0 +1,44 @@
+=== START 2026-10-12T07:04:13Z fetch openssl
++ cd /srv/verify/src
++ git clone -q --depth 1 --branch OpenSSL_1_1_1w https://github.com/openssl/openssl openssl-1.1.1w
+Note: switching to 'e04bd3433fd84e1861bf258ea37928d9845e6a86'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
++ git clone -q --depth 1 --branch openssl-4.0.3 https://github.com/openssl/openssl openssl-4.0.3
+Note: switching to 'af1775b60dfa141a4ad762585052cabeb9f37e9e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
++ git -C openssl-1.1.1w log -1 '--format=%H %d %cd'
+e04bd3433fd84e1861bf258ea37928d9845e6a86  (grafted, HEAD, tag: OpenSSL_1_1_1w) Mon Sep 11 16:08:11 2023 +0200
++ git -C openssl-4.0.3 log -1 '--format=%H %d %cd'
+af1775b60dfa141a4ad762585052cabeb9f37e9e  (grafted, HEAD, tag: openssl-4.0.3) Tue Sep 29 13:44:55 2026 +0000
++ set +x
+=== END 2026-10-12T07:04:27Z fetch openssl

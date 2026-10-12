@@ -1,0 +1,148 @@
+=== START 2026-10-12T07:20:11Z runtime toPEM check in "Ubuntu 24.04.5 LTS"
+gcc-14 (Ubuntu 14.2.0-4ubuntu2~24.04.1) 14.2.0
+OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024)
+Lua 5.4.6  Copyright (C) 1994-2023 Lua.org, PUC-Rio
+/usr/bin/luarocks 3.8.0
+--- build cqueues rel-20261006 (4820fa05a6dd563578af0ba0067563f60910efd8)
+cqueues luarocks make exit status: 0 (full output in cqueues-build.log)
+No existing manifest. Attempting to rebuild...
+cqueues 20261006.54-0 is now installed in /srv/verify/work/rt-host/tree-cq (license: MIT/X11)
+
+--- build luaossl fixed = 950e54e with CC=gcc-14 CFLAGS="-O2 -fPIC -std=gnu23"
+luaossl fixed luarocks make exit status: 0
+gcc-14 -O2 -fPIC -std=gnu23 -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+	libssl.so.3 => /usr/lib/x86_64-linux-gnu/libssl.so.3 (0x00007f9c3836d000)
+	libcrypto.so.3 => /usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007f9c37e00000)
+--- build luaossl unpatched = e5cd207 with CC=gcc-14 CFLAGS="-O2 -fPIC -std=gnu17"
+luaossl unpatched luarocks make exit status: 0
+gcc-14 -O2 -fPIC -std=gnu17 -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+	libssl.so.3 => /usr/lib/x86_64-linux-gnu/libssl.so.3 (0x00007fec05aa1000)
+	libcrypto.so.3 => /usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007fec05400000)
+
+--- 2026-10-12T07:20:28Z run: fixed (s_server on 127.0.0.1:4431)
+luaossl /srv/verify/work/rt-host/tree-fixed/lib/lua/5.4/_openssl.so | built against OpenSSL 3.0.13 30 Jan 2024 | running OpenSSL 3.0.13 30 Jan 2024
+cqueues /srv/verify/work/rt-host/tree-cq/lib/lua/5.4/_cqueues.so 20261006
+handshake done (TLS version 0x0304); toPEM() returned 1842 bytes -> topem-fixed.pem
+client exit status: 0
+s_server exit status: 0
+RESULT fixed: toPEM() output == expected.pem (PEM of the stapled resp.der) -> MATCH
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  topem-fixed.pem
+
+--- 2026-10-12T07:20:28Z run: unpatched (s_server on 127.0.0.1:4432)
+luaossl /srv/verify/work/rt-host/tree-unpatched/lib/lua/5.4/_openssl.so | built against OpenSSL 3.0.13 30 Jan 2024 | running OpenSSL 3.0.13 30 Jan 2024
+cqueues /srv/verify/work/rt-host/tree-cq/lib/lua/5.4/_cqueues.so 20261006
+handshake done (TLS version 0x0304); toPEM() returned 1842 bytes -> topem-unpatched.pem
+client exit status: 0
+s_server exit status: 0
+RESULT unpatched: toPEM() output == expected.pem (PEM of the stapled resp.der) -> MATCH
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  topem-unpatched.pem
+
+RESULT: fixed (C23) output == unpatched (-std=gnu17) output -> SAME
+--- toPEM() output:
+-----BEGIN OCSP RESPONSE-----
+MIIFIAoBAKCCBRkwggUVBgkrBgEFBQcwAQEEggUGMIIFAjCBrqEiMCAxHjAcBgNV
+BAMMFWx1YW9zc2wgYXVkaXQgdGVzdCBDQRgPMjAyNjEwMTIwNzE2NTJaMHcwdTBN
+...
+1dvLzXGPlYVonnEJeu2ZS1ob34s=
+-----END OCSP RESPONSE-----
+=== END 2026-10-12T07:20:28Z runtime toPEM check
+
+################################ chroot questing
+=== START 2026-10-12T07:20:28Z runtime toPEM check in "Ubuntu 25.10"
+gcc (Ubuntu 15.2.0-4ubuntu4) 15.2.0
+OpenSSL 3.5.3 16 Sep 2025 (Library: OpenSSL 3.5.3 16 Sep 2025)
+Lua 5.4.8  Copyright (C) 1994-2025 Lua.org, PUC-Rio
+/usr/bin/luarocks 3.8.0
+--- build cqueues rel-20261006 (4820fa05a6dd563578af0ba0067563f60910efd8)
+cqueues luarocks make exit status: 0 (full output in cqueues-build.log)
+No existing manifest. Attempting to rebuild...
+cqueues 20261006.54-0 is now installed in /build/rt/tree-cq (license: MIT/X11)
+
+--- build luaossl fixed = 950e54e with CC=gcc CFLAGS="-O2 -fPIC "
+luaossl fixed luarocks make exit status: 0
+gcc -O2 -fPIC  -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+	libssl.so.3 => /usr/lib/x86_64-linux-gnu/libssl.so.3 (0x00007f8f5ad74000)
+	libcrypto.so.3 => /usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007f8f5a600000)
+--- build luaossl unpatched = e5cd207 with CC=gcc CFLAGS="-O2 -fPIC -std=gnu17"
+luaossl unpatched luarocks make exit status: 0
+gcc -O2 -fPIC -std=gnu17 -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+	libssl.so.3 => /usr/lib/x86_64-linux-gnu/libssl.so.3 (0x00007f70ea7dc000)
+	libcrypto.so.3 => /usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007f70ea000000)
+
+--- 2026-10-12T07:20:46Z run: fixed (s_server on 127.0.0.1:4441)
+luaossl /build/rt/tree-fixed/lib/lua/5.4/_openssl.so | built against OpenSSL 3.5.3 16 Sep 2025 | running OpenSSL 3.5.3 16 Sep 2025
+cqueues /build/rt/tree-cq/lib/lua/5.4/_cqueues.so 20261006
+handshake done (TLS version 0x0304); toPEM() returned 1842 bytes -> topem-fixed.pem
+client exit status: 0
+s_server exit status: 0
+RESULT fixed: toPEM() output == expected.pem (PEM of the stapled resp.der) -> MATCH
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  topem-fixed.pem
+
+--- 2026-10-12T07:20:46Z run: unpatched (s_server on 127.0.0.1:4442)
+luaossl /build/rt/tree-unpatched/lib/lua/5.4/_openssl.so | built against OpenSSL 3.5.3 16 Sep 2025 | running OpenSSL 3.5.3 16 Sep 2025
+cqueues /build/rt/tree-cq/lib/lua/5.4/_cqueues.so 20261006
+handshake done (TLS version 0x0304); toPEM() returned 1842 bytes -> topem-unpatched.pem
+client exit status: 0
+s_server exit status: 0
+RESULT unpatched: toPEM() output == expected.pem (PEM of the stapled resp.der) -> MATCH
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  topem-unpatched.pem
+
+RESULT: fixed (C23) output == unpatched (-std=gnu17) output -> SAME
+--- toPEM() output:
+-----BEGIN OCSP RESPONSE-----
+MIIFIAoBAKCCBRkwggUVBgkrBgEFBQcwAQEEggUGMIIFAjCBrqEiMCAxHjAcBgNV
+BAMMFWx1YW9zc2wgYXVkaXQgdGVzdCBDQRgPMjAyNjEwMTIwNzE2NTJaMHcwdTBN
+...
+1dvLzXGPlYVonnEJeu2ZS1ob34s=
+-----END OCSP RESPONSE-----
+=== END 2026-10-12T07:20:46Z runtime toPEM check
+
+################################ chroot resolute
+=== START 2026-10-12T07:20:46Z runtime toPEM check in "Ubuntu 26.04 LTS"
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)
+Lua 5.4.8  Copyright (C) 1994-2025 Lua.org, PUC-Rio
+/usr/bin/luarocks 3.8.0
+--- build cqueues rel-20261006 (4820fa05a6dd563578af0ba0067563f60910efd8)
+cqueues luarocks make exit status: 0 (full output in cqueues-build.log)
+No existing manifest. Attempting to rebuild...
+cqueues 20261006.54-0 is now installed in /build/rt/tree-cq (license: MIT/X11)
+
+--- build luaossl fixed = 950e54e with CC=gcc CFLAGS="-O2 -fPIC "
+luaossl fixed luarocks make exit status: 0
+gcc -O2 -fPIC  -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+	libssl.so.3 => /usr/lib/x86_64-linux-gnu/libssl.so.3 (0x00007fe937db0000)
+	libcrypto.so.3 => /usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007fe937600000)
+--- build luaossl unpatched = e5cd207 with CC=gcc CFLAGS="-O2 -fPIC -std=gnu17"
+luaossl unpatched luarocks make exit status: 0
+gcc -O2 -fPIC -std=gnu17 -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+	libssl.so.3 => /usr/lib/x86_64-linux-gnu/libssl.so.3 (0x00007f3d54750000)
+	libcrypto.so.3 => /usr/lib/x86_64-linux-gnu/libcrypto.so.3 (0x00007f3d54000000)
+
+--- 2026-10-12T07:21:03Z run: fixed (s_server on 127.0.0.1:4451)
+luaossl /build/rt/tree-fixed/lib/lua/5.4/_openssl.so | built against OpenSSL 3.5.5 27 Jan 2026 | running OpenSSL 3.5.5 27 Jan 2026
+cqueues /build/rt/tree-cq/lib/lua/5.4/_cqueues.so 20261006
+handshake done (TLS version 0x0304); toPEM() returned 1842 bytes -> topem-fixed.pem
+client exit status: 0
+s_server exit status: 0
+RESULT fixed: toPEM() output == expected.pem (PEM of the stapled resp.der) -> MATCH
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  topem-fixed.pem
+
+--- 2026-10-12T07:21:03Z run: unpatched (s_server on 127.0.0.1:4452)
+luaossl /build/rt/tree-unpatched/lib/lua/5.4/_openssl.so | built against OpenSSL 3.5.5 27 Jan 2026 | running OpenSSL 3.5.5 27 Jan 2026
+cqueues /build/rt/tree-cq/lib/lua/5.4/_cqueues.so 20261006
+handshake done (TLS version 0x0304); toPEM() returned 1842 bytes -> topem-unpatched.pem
+client exit status: 0
+s_server exit status: 0
+RESULT unpatched: toPEM() output == expected.pem (PEM of the stapled resp.der) -> MATCH
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  topem-unpatched.pem
+
+RESULT: fixed (C23) output == unpatched (-std=gnu17) output -> SAME
+--- toPEM() output:
+-----BEGIN OCSP RESPONSE-----
+MIIFIAoBAKCCBRkwggUVBgkrBgEFBQcwAQEEggUGMIIFAjCBrqEiMCAxHjAcBgNV
+BAMMFWx1YW9zc2wgYXVkaXQgdGVzdCBDQRgPMjAyNjEwMTIwNzE2NTJaMHcwdTBN
+...
+1dvLzXGPlYVonnEJeu2ZS1ob34s=
+-----END OCSP RESPONSE-----
+=== END 2026-10-12T07:21:03Z runtime toPEM check

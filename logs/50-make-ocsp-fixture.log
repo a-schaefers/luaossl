@@ -1,0 +1,18 @@
+=== START 2026-10-12T07:16:51Z OCSP fixture (OpenSSL 3.0.13 30 Jan 2024 (Library: OpenSSL 3.0.13 30 Jan 2024))
++ openssl req -x509 -newkey rsa:2048 -nodes -keyout ca.key -out ca.pem -days 30 -subj '/CN=luaossl audit test CA' -addext basicConstraints=critical,CA:TRUE -addext keyUsage=critical,keyCertSign,cRLSign
++ openssl req -newkey rsa:2048 -nodes -keyout server.key -out server.csr -subj /CN=localhost
++ printf 'subjectAltName=DNS:localhost,IP:127.0.0.1\nauthorityInfoAccess=OCSP;URI:http://127.0.0.1:8888\n'
++ openssl x509 -req -in server.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out server.pem -days 30 -extfile ext.cnf
+index.txt:
+V	261111071652Z		6C6664CB3402A70A2D4C7FFDC0AE0DC493354376	unknown	/CN=localhost
++ openssl ocsp -issuer ca.pem -cert server.pem -no_nonce -reqout req.der
++ openssl ocsp -index index.txt -rsigner ca.pem -rkey ca.key -CA ca.pem -reqin req.der -respout resp.der -ndays 30
++ openssl ocsp -respin resp.der -issuer ca.pem -cert server.pem -CAfile ca.pem -no_nonce
+Response verify OK
+server.pem: good
+	This Update: Oct 12 07:16:52 2026 GMT
+	Next Update: Nov 11 07:16:52 2026 GMT
+expected.pem written from 1316 DER bytes
+12c06f69131087ea70d9fa63ddbf3855678b888bd2ccdd218d7580dd33157b1b  resp.der
+4da02887363059dfaee70f41a2b374e3e1d528e5e1c5200b45dc03eda5d2399d  expected.pem
+=== END 2026-10-12T07:16:52Z OCSP fixture

@@ -1,0 +1,928 @@
+Hunk 1 found at offset 2...
+src/openssl.c: In function 'pk_new':
+src/openssl.c:4210:25: warning: 'RSA_new' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4210 |                         if (!(rsa = RSA_new()))
+      |                         ^~
+In file included from /usr/include/openssl/x509.h:36,
+                 from src/openssl.c:71:
+/usr/include/openssl/rsa.h:206:28: note: declared here
+  206 | OSSL_DEPRECATEDIN_3_0 RSA *RSA_new(void);
+      |                            ^~~~~~~
+src/openssl.c:4213:25: warning: 'RSA_generate_key_ex' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4213 |                         if (!RSA_generate_key_ex(rsa, bits, exp, 0)) {
+      |                         ^~
+/usr/include/openssl/rsa.h:265:27: note: declared here
+  265 | OSSL_DEPRECATEDIN_3_0 int RSA_generate_key_ex(RSA *rsa, int bits, BIGNUM *e,
+      |                           ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:4214:33: warning: 'RSA_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4214 |                                 RSA_free(rsa);
+      |                                 ^~~~~~~~
+/usr/include/openssl/rsa.h:298:28: note: declared here
+  298 | OSSL_DEPRECATEDIN_3_0 void RSA_free(RSA *r);
+      |                            ^~~~~~~~
+src/openssl.c:4218:25: warning: 'EVP_PKEY_set1_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4218 |                         EVP_PKEY_set1_RSA(*ud, rsa);
+      |                         ^~~~~~~~~~~~~~~~~
+In file included from /usr/include/openssl/x509.h:29:
+/usr/include/openssl/evp.h:1346:5: note: declared here
+ 1346 | int EVP_PKEY_set1_RSA(EVP_PKEY *pkey, struct rsa_st *key);
+      |     ^~~~~~~~~~~~~~~~~
+src/openssl.c:4220:25: warning: 'RSA_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4220 |                         RSA_free(rsa);
+      |                         ^~~~~~~~
+/usr/include/openssl/rsa.h:298:28: note: declared here
+  298 | OSSL_DEPRECATEDIN_3_0 void RSA_free(RSA *r);
+      |                            ^~~~~~~~
+src/openssl.c:4230:25: warning: 'DSA_new' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4230 |                         if (!(dsa = DSA_new()))
+      |                         ^~
+In file included from /usr/include/openssl/x509.h:37:
+/usr/include/openssl/dsa.h:125:28: note: declared here
+  125 | OSSL_DEPRECATEDIN_3_0 DSA *DSA_new(void);
+      |                            ^~~~~~~
+src/openssl.c:4233:25: warning: 'DSA_generate_parameters_ex' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4233 |                         if (!DSA_generate_parameters_ex(dsa, bits, 0, 0, 0, 0, 0)) {
+      |                         ^~
+/usr/include/openssl/dsa.h:167:27: note: declared here
+  167 | OSSL_DEPRECATEDIN_3_0 int DSA_generate_parameters_ex(DSA *dsa, int bits,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+src/openssl.c:4234:33: warning: 'DSA_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4234 |                                 DSA_free(dsa);
+      |                                 ^~~~~~~~
+/usr/include/openssl/dsa.h:127:28: note: declared here
+  127 | OSSL_DEPRECATEDIN_3_0 void DSA_free(DSA *r);
+      |                            ^~~~~~~~
+src/openssl.c:4238:25: warning: 'DSA_generate_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4238 |                         if (!DSA_generate_key(dsa)) {
+      |                         ^~
+/usr/include/openssl/dsa.h:174:27: note: declared here
+  174 | OSSL_DEPRECATEDIN_3_0 int DSA_generate_key(DSA *a);
+      |                           ^~~~~~~~~~~~~~~~
+src/openssl.c:4239:33: warning: 'DSA_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4239 |                                 DSA_free(dsa);
+      |                                 ^~~~~~~~
+/usr/include/openssl/dsa.h:127:28: note: declared here
+  127 | OSSL_DEPRECATEDIN_3_0 void DSA_free(DSA *r);
+      |                            ^~~~~~~~
+src/openssl.c:4243:25: warning: 'EVP_PKEY_set1_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4243 |                         EVP_PKEY_set1_DSA(*ud, dsa);
+      |                         ^~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1355:5: note: declared here
+ 1355 | int EVP_PKEY_set1_DSA(EVP_PKEY *pkey, struct dsa_st *key);
+      |     ^~~~~~~~~~~~~~~~~
+src/openssl.c:4245:25: warning: 'DSA_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4245 |                         DSA_free(dsa);
+      |                         ^~~~~~~~
+/usr/include/openssl/dsa.h:127:28: note: declared here
+  127 | OSSL_DEPRECATEDIN_3_0 void DSA_free(DSA *r);
+      |                            ^~~~~~~~
+src/openssl.c:4264:33: warning: 'PEM_read_bio_DHparams' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4264 |                                 dh = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
+      |                                 ^~
+In file included from src/openssl.c:76:
+/usr/include/openssl/pem.h:469:1: note: declared here
+  469 | DECLARE_PEM_rw_attr(OSSL_DEPRECATEDIN_3_0, DHparams, DH)
+      | ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:4269:33: warning: 'DH_new' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4269 |                                 if (!(dh = DH_new()))
+      |                                 ^~
+In file included from /usr/include/openssl/dsa.h:51:
+/usr/include/openssl/dh.h:203:27: note: declared here
+  203 | OSSL_DEPRECATEDIN_3_0 DH *DH_new(void);
+      |                           ^~~~~~
+src/openssl.c:4272:33: warning: 'DH_generate_parameters_ex' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4272 |                                 if (!DH_generate_parameters_ex(dh, bits, generator, 0)) {
+      |                                 ^~
+/usr/include/openssl/dh.h:216:27: note: declared here
+  216 | OSSL_DEPRECATEDIN_3_0 int DH_generate_parameters_ex(DH *dh, int prime_len,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/openssl.c:4273:41: warning: 'DH_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4273 |                                         DH_free(dh);
+      |                                         ^~~~~~~
+/usr/include/openssl/dh.h:204:28: note: declared here
+  204 | OSSL_DEPRECATEDIN_3_0 void DH_free(DH *dh);
+      |                            ^~~~~~~
+src/openssl.c:4279:25: warning: 'DH_generate_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4279 |                         if (!DH_generate_key(dh)) {
+      |                         ^~
+/usr/include/openssl/dh.h:227:27: note: declared here
+  227 | OSSL_DEPRECATEDIN_3_0 int DH_generate_key(DH *dh);
+      |                           ^~~~~~~~~~~~~~~
+src/openssl.c:4280:33: warning: 'DH_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4280 |                                 DH_free(dh);
+      |                                 ^~~~~~~
+/usr/include/openssl/dh.h:204:28: note: declared here
+  204 | OSSL_DEPRECATEDIN_3_0 void DH_free(DH *dh);
+      |                            ^~~~~~~
+src/openssl.c:4284:25: warning: 'EVP_PKEY_set1_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4284 |                         EVP_PKEY_set1_DH(*ud, dh);
+      |                         ^~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1364:27: note: declared here
+ 1364 | OSSL_DEPRECATEDIN_3_0 int EVP_PKEY_set1_DH(EVP_PKEY *pkey, struct dh_st *key);
+      |                           ^~~~~~~~~~~~~~~~
+src/openssl.c:4286:25: warning: 'DH_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4286 |                         DH_free(dh);
+      |                         ^~~~~~~
+/usr/include/openssl/dh.h:204:28: note: declared here
+  204 | OSSL_DEPRECATEDIN_3_0 void DH_free(DH *dh);
+      |                            ^~~~~~~
+src/openssl.c:4306:25: warning: 'EC_KEY_new' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4306 |                         if (!(key = EC_KEY_new())) {
+      |                         ^~
+In file included from /usr/include/openssl/x509.h:33:
+/usr/include/openssl/ec.h:968:31: note: declared here
+  968 | OSSL_DEPRECATEDIN_3_0 EC_KEY *EC_KEY_new(void);
+      |                               ^~~~~~~~~~
+src/openssl.c:4311:25: warning: 'EC_KEY_set_group' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4311 |                         EC_KEY_set_group(key, grp);
+      |                         ^~~~~~~~~~~~~~~~
+/usr/include/openssl/ec.h:1042:27: note: declared here
+ 1042 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_group(EC_KEY *key, const EC_GROUP *group);
+      |                           ^~~~~~~~~~~~~~~~
+src/openssl.c:4315:25: warning: 'EC_KEY_generate_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4315 |                         if (!EC_KEY_generate_key(key)) {
+      |                         ^~
+/usr/include/openssl/ec.h:1101:27: note: declared here
+ 1101 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_generate_key(EC_KEY *key);
+      |                           ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:4316:33: warning: 'EC_KEY_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4316 |                                 EC_KEY_free(key);
+      |                                 ^~~~~~~~~~~
+/usr/include/openssl/ec.h:1003:28: note: declared here
+ 1003 | OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+      |                            ^~~~~~~~~~~
+src/openssl.c:4320:25: warning: 'EVP_PKEY_set1_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4320 |                         EVP_PKEY_set1_EC_KEY(*ud, key);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1372:5: note: declared here
+ 1372 | int EVP_PKEY_set1_EC_KEY(EVP_PKEY *pkey, struct ec_key_st *key);
+      |     ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:4322:25: warning: 'EC_KEY_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4322 |                         EC_KEY_free(key);
+      |                         ^~~~~~~~~~~
+/usr/include/openssl/ec.h:1003:28: note: declared here
+ 1003 | OSSL_DEPRECATEDIN_3_0 void EC_KEY_free(EC_KEY *key);
+      |                            ^~~~~~~~~~~
+src/openssl.c: In function 'pk_pushparam':
+src/openssl.c:4944:17: warning: 'RSA_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4944 |                 RSA_get0_key(EVP_PKEY_get0_RSA(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/rsa.h:222:28: note: declared here
+  222 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_key(const RSA *r,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:4944:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4944 |                 RSA_get0_key(EVP_PKEY_get0_RSA(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4950:17: warning: 'RSA_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4950 |                 RSA_get0_key(EVP_PKEY_get0_RSA(pkey), NULL, &i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/rsa.h:222:28: note: declared here
+  222 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_key(const RSA *r,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:4950:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4950 |                 RSA_get0_key(EVP_PKEY_get0_RSA(pkey), NULL, &i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4956:17: warning: 'RSA_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4956 |                 RSA_get0_key(EVP_PKEY_get0_RSA(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/rsa.h:222:28: note: declared here
+  222 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_key(const RSA *r,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:4956:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4956 |                 RSA_get0_key(EVP_PKEY_get0_RSA(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4962:17: warning: 'RSA_get0_factors' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4962 |                 RSA_get0_factors(EVP_PKEY_get0_RSA(pkey), &i, NULL);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:225:28: note: declared here
+  225 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_factors(const RSA *r,
+      |                            ^~~~~~~~~~~~~~~~
+src/openssl.c:4962:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4962 |                 RSA_get0_factors(EVP_PKEY_get0_RSA(pkey), &i, NULL);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4968:17: warning: 'RSA_get0_factors' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4968 |                 RSA_get0_factors(EVP_PKEY_get0_RSA(pkey), NULL, &i);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:225:28: note: declared here
+  225 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_factors(const RSA *r,
+      |                            ^~~~~~~~~~~~~~~~
+src/openssl.c:4968:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4968 |                 RSA_get0_factors(EVP_PKEY_get0_RSA(pkey), NULL, &i);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4974:17: warning: 'RSA_get0_crt_params' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4974 |                 RSA_get0_crt_params(EVP_PKEY_get0_RSA(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:230:28: note: declared here
+  230 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_crt_params(const RSA *r,
+      |                            ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:4974:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4974 |                 RSA_get0_crt_params(EVP_PKEY_get0_RSA(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4980:17: warning: 'RSA_get0_crt_params' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4980 |                 RSA_get0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, &i, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:230:28: note: declared here
+  230 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_crt_params(const RSA *r,
+      |                            ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:4980:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4980 |                 RSA_get0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, &i, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4986:17: warning: 'RSA_get0_crt_params' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4986 |                 RSA_get0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:230:28: note: declared here
+  230 | OSSL_DEPRECATEDIN_3_0 void RSA_get0_crt_params(const RSA *r,
+      |                            ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:4986:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4986 |                 RSA_get0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4991:17: warning: 'DSA_get0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4991 |                 DSA_get0_pqg(EVP_PKEY_get0_DSA(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:201:28: note: declared here
+  201 | OSSL_DEPRECATEDIN_3_0 void DSA_get0_pqg(const DSA *d, const BIGNUM **p,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:4991:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4991 |                 DSA_get0_pqg(EVP_PKEY_get0_DSA(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:4996:17: warning: 'DSA_get0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4996 |                 DSA_get0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, &i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:201:28: note: declared here
+  201 | OSSL_DEPRECATEDIN_3_0 void DSA_get0_pqg(const DSA *d, const BIGNUM **p,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:4996:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 4996 |                 DSA_get0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, &i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5001:17: warning: 'DSA_get0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5001 |                 DSA_get0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:201:28: note: declared here
+  201 | OSSL_DEPRECATEDIN_3_0 void DSA_get0_pqg(const DSA *d, const BIGNUM **p,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:5001:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5001 |                 DSA_get0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5006:17: warning: 'DSA_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5006 |                 DSA_get0_key(EVP_PKEY_get0_DSA(pkey), &i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:204:28: note: declared here
+  204 | OSSL_DEPRECATEDIN_3_0 void DSA_get0_key(const DSA *d, const BIGNUM **pub_key,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:5006:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5006 |                 DSA_get0_key(EVP_PKEY_get0_DSA(pkey), &i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5011:17: warning: 'DSA_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5011 |                 DSA_get0_key(EVP_PKEY_get0_DSA(pkey), NULL, &i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:204:28: note: declared here
+  204 | OSSL_DEPRECATEDIN_3_0 void DSA_get0_key(const DSA *d, const BIGNUM **pub_key,
+      |                            ^~~~~~~~~~~~
+src/openssl.c:5011:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5011 |                 DSA_get0_key(EVP_PKEY_get0_DSA(pkey), NULL, &i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5016:17: warning: 'DH_get0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5016 |                 DH_get0_pqg(EVP_PKEY_get0_DH(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:257:28: note: declared here
+  257 | OSSL_DEPRECATEDIN_3_0 void DH_get0_pqg(const DH *dh, const BIGNUM **p,
+      |                            ^~~~~~~~~~~
+src/openssl.c:5016:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5016 |                 DH_get0_pqg(EVP_PKEY_get0_DH(pkey), &i, NULL, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5021:17: warning: 'DH_get0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5021 |                 DH_get0_pqg(EVP_PKEY_get0_DH(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:257:28: note: declared here
+  257 | OSSL_DEPRECATEDIN_3_0 void DH_get0_pqg(const DH *dh, const BIGNUM **p,
+      |                            ^~~~~~~~~~~
+src/openssl.c:5021:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5021 |                 DH_get0_pqg(EVP_PKEY_get0_DH(pkey), NULL, NULL, &i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5026:17: warning: 'DH_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5026 |                 DH_get0_key(EVP_PKEY_get0_DH(pkey), &i, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:260:28: note: declared here
+  260 | OSSL_DEPRECATEDIN_3_0 void DH_get0_key(const DH *dh, const BIGNUM **pub_key,
+      |                            ^~~~~~~~~~~
+src/openssl.c:5026:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5026 |                 DH_get0_key(EVP_PKEY_get0_DH(pkey), &i, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5031:17: warning: 'DH_get0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5031 |                 DH_get0_key(EVP_PKEY_get0_DH(pkey), NULL, &i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:260:28: note: declared here
+  260 | OSSL_DEPRECATEDIN_3_0 void DH_get0_key(const DH *dh, const BIGNUM **pub_key,
+      |                            ^~~~~~~~~~~
+src/openssl.c:5031:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5031 |                 DH_get0_key(EVP_PKEY_get0_DH(pkey), NULL, &i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5037:17: warning: 'EC_KEY_get0_group' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5037 |                 ecg_dup_nil(L, EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey)));
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/ec.h:1034:39: note: declared here
+ 1034 | OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+      |                                       ^~~~~~~~~~~~~~~~~
+src/openssl.c:5037:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5037 |                 ecg_dup_nil(L, EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey)));
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5044:17: warning: 'EC_KEY_get0_group' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5044 |                 if ((group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey))) && (pub_key = EC_KEY_get0_public_key(EVP_PKEY_get0_EC_KEY(pkey)))) {
+      |                 ^~
+/usr/include/openssl/ec.h:1034:39: note: declared here
+ 1034 | OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+      |                                       ^~~~~~~~~~~~~~~~~
+src/openssl.c:5044:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5044 |                 if ((group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey))) && (pub_key = EC_KEY_get0_public_key(EVP_PKEY_get0_EC_KEY(pkey)))) {
+      |                 ^~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5044:17: warning: 'EC_KEY_get0_public_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5044 |                 if ((group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey))) && (pub_key = EC_KEY_get0_public_key(EVP_PKEY_get0_EC_KEY(pkey)))) {
+      |                 ^~
+/usr/include/openssl/ec.h:1062:39: note: declared here
+ 1062 | OSSL_DEPRECATEDIN_3_0 const EC_POINT *EC_KEY_get0_public_key(const EC_KEY *key);
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5044:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5044 |                 if ((group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey))) && (pub_key = EC_KEY_get0_public_key(EVP_PKEY_get0_EC_KEY(pkey)))) {
+      |                 ^~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5045:25: warning: 'EC_POINT_point2bn' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5045 |                         bn_dup_nil(L, EC_POINT_point2bn(group, pub_key, EC_KEY_get_conv_form(EVP_PKEY_get0_EC_KEY(pkey)), NULL, getctx(L)));
+      |                         ^~~~~~~~~~
+/usr/include/openssl/ec.h:770:31: note: declared here
+  770 | OSSL_DEPRECATEDIN_3_0 BIGNUM *EC_POINT_point2bn(const EC_GROUP *,
+      |                               ^~~~~~~~~~~~~~~~~
+src/openssl.c:5045:25: warning: 'EC_KEY_get_conv_form' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5045 |                         bn_dup_nil(L, EC_POINT_point2bn(group, pub_key, EC_KEY_get_conv_form(EVP_PKEY_get0_EC_KEY(pkey)), NULL, getctx(L)));
+      |                         ^~~~~~~~~~
+/usr/include/openssl/ec.h:1074:47: note: declared here
+ 1074 | OSSL_DEPRECATEDIN_3_0 point_conversion_form_t EC_KEY_get_conv_form(const EC_KEY *key);
+      |                                               ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5045:25: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5045 |                         bn_dup_nil(L, EC_POINT_point2bn(group, pub_key, EC_KEY_get_conv_form(EVP_PKEY_get0_EC_KEY(pkey)), NULL, getctx(L)));
+      |                         ^~~~~~~~~~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5053:17: warning: 'EC_KEY_get0_private_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5053 |                 bn_dup_nil(L, EC_KEY_get0_private_key(EVP_PKEY_get0_EC_KEY(pkey)));
+      |                 ^~~~~~~~~~
+/usr/include/openssl/ec.h:1048:37: note: declared here
+ 1048 | OSSL_DEPRECATEDIN_3_0 const BIGNUM *EC_KEY_get0_private_key(const EC_KEY *key);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5053:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5053 |                 bn_dup_nil(L, EC_KEY_get0_private_key(EVP_PKEY_get0_EC_KEY(pkey)));
+      |                 ^~~~~~~~~~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c: In function 'pk_setparam':
+src/openssl.c:5091:17: warning: 'RSA_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5091 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/rsa.h:212:27: note: declared here
+  212 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d);
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5091:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5091 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5091:30: warning: passing argument 1 of 'RSA_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5091 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), i, NULL, NULL);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:212:45: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  212 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d);
+      |                                        ~~~~~^
+src/openssl.c:5096:17: warning: 'RSA_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5096 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), NULL, i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/rsa.h:212:27: note: declared here
+  212 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d);
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5096:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5096 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), NULL, i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5096:30: warning: passing argument 1 of 'RSA_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5096 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), NULL, i, NULL);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:212:45: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  212 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d);
+      |                                        ~~~~~^
+src/openssl.c:5101:17: warning: 'RSA_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5101 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/rsa.h:212:27: note: declared here
+  212 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d);
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5101:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5101 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5101:30: warning: passing argument 1 of 'RSA_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5101 |                 RSA_set0_key(EVP_PKEY_get0_RSA(pkey), NULL, NULL, i);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:212:45: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  212 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_key(RSA *r, BIGNUM *n, BIGNUM *e, BIGNUM *d);
+      |                                        ~~~~~^
+src/openssl.c:5106:17: warning: 'RSA_set0_factors' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5106 |                 RSA_set0_factors(EVP_PKEY_get0_RSA(pkey), i, NULL);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:213:27: note: declared here
+  213 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q);
+      |                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5106:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5106 |                 RSA_set0_factors(EVP_PKEY_get0_RSA(pkey), i, NULL);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5106:34: warning: passing argument 1 of 'RSA_set0_factors' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5106 |                 RSA_set0_factors(EVP_PKEY_get0_RSA(pkey), i, NULL);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:213:49: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  213 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q);
+      |                                            ~~~~~^
+src/openssl.c:5111:17: warning: 'RSA_set0_factors' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5111 |                 RSA_set0_factors(EVP_PKEY_get0_RSA(pkey), NULL, i);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:213:27: note: declared here
+  213 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q);
+      |                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5111:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5111 |                 RSA_set0_factors(EVP_PKEY_get0_RSA(pkey), NULL, i);
+      |                 ^~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5111:34: warning: passing argument 1 of 'RSA_set0_factors' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5111 |                 RSA_set0_factors(EVP_PKEY_get0_RSA(pkey), NULL, i);
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:213:49: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  213 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_factors(RSA *r, BIGNUM *p, BIGNUM *q);
+      |                                            ~~~~~^
+src/openssl.c:5116:17: warning: 'RSA_set0_crt_params' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5116 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:214:27: note: declared here
+  214 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_crt_params(RSA *r,
+      |                           ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:5116:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5116 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5116:37: warning: passing argument 1 of 'RSA_set0_crt_params' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5116 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), i, NULL, NULL);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:214:52: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  214 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_crt_params(RSA *r,
+      |                                               ~~~~~^
+src/openssl.c:5121:17: warning: 'RSA_set0_crt_params' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5121 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, i, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:214:27: note: declared here
+  214 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_crt_params(RSA *r,
+      |                           ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:5121:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5121 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, i, NULL);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5121:37: warning: passing argument 1 of 'RSA_set0_crt_params' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5121 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, i, NULL);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:214:52: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  214 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_crt_params(RSA *r,
+      |                                               ~~~~~^
+src/openssl.c:5126:17: warning: 'RSA_set0_crt_params' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5126 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:214:27: note: declared here
+  214 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_crt_params(RSA *r,
+      |                           ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:5126:17: warning: 'EVP_PKEY_get0_RSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5126 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/evp.h:1348:22: note: declared here
+ 1348 | const struct rsa_st *EVP_PKEY_get0_RSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5126:37: warning: passing argument 1 of 'RSA_set0_crt_params' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5126 |                 RSA_set0_crt_params(EVP_PKEY_get0_RSA(pkey), NULL, NULL, i);
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/rsa.h:214:52: note: expected 'RSA *' {aka 'struct rsa_st *'} but argument is of type 'const struct rsa_st *'
+  214 | OSSL_DEPRECATEDIN_3_0 int RSA_set0_crt_params(RSA *r,
+      |                                               ~~~~~^
+src/openssl.c:5131:17: warning: 'DSA_set0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5131 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:203:27: note: declared here
+  203 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5131:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5131 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5131:30: warning: passing argument 1 of 'DSA_set0_pqg' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5131 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), i, NULL, NULL);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dsa.h:203:45: note: expected 'DSA *' {aka 'struct dsa_st *'} but argument is of type 'const struct dsa_st *'
+  203 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                                        ~~~~~^
+src/openssl.c:5136:17: warning: 'DSA_set0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5136 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:203:27: note: declared here
+  203 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5136:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5136 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5136:30: warning: passing argument 1 of 'DSA_set0_pqg' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5136 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, i, NULL);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dsa.h:203:45: note: expected 'DSA *' {aka 'struct dsa_st *'} but argument is of type 'const struct dsa_st *'
+  203 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                                        ~~~~~^
+src/openssl.c:5141:17: warning: 'DSA_set0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5141 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:203:27: note: declared here
+  203 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5141:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5141 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5141:30: warning: passing argument 1 of 'DSA_set0_pqg' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5141 |                 DSA_set0_pqg(EVP_PKEY_get0_DSA(pkey), NULL, NULL, i);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dsa.h:203:45: note: expected 'DSA *' {aka 'struct dsa_st *'} but argument is of type 'const struct dsa_st *'
+  203 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_pqg(DSA *d, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                                        ~~~~~^
+src/openssl.c:5146:17: warning: 'DSA_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5146 |                 DSA_set0_key(EVP_PKEY_get0_DSA(pkey), i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:206:27: note: declared here
+  206 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_key(DSA *d, BIGNUM *pub_key,
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5146:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5146 |                 DSA_set0_key(EVP_PKEY_get0_DSA(pkey), i, NULL);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5146:30: warning: passing argument 1 of 'DSA_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5146 |                 DSA_set0_key(EVP_PKEY_get0_DSA(pkey), i, NULL);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dsa.h:206:45: note: expected 'DSA *' {aka 'struct dsa_st *'} but argument is of type 'const struct dsa_st *'
+  206 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_key(DSA *d, BIGNUM *pub_key,
+      |                                        ~~~~~^
+src/openssl.c:5151:17: warning: 'DSA_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5151 |                 DSA_set0_key(EVP_PKEY_get0_DSA(pkey), NULL, i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/dsa.h:206:27: note: declared here
+  206 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_key(DSA *d, BIGNUM *pub_key,
+      |                           ^~~~~~~~~~~~
+src/openssl.c:5151:17: warning: 'EVP_PKEY_get0_DSA' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5151 |                 DSA_set0_key(EVP_PKEY_get0_DSA(pkey), NULL, i);
+      |                 ^~~~~~~~~~~~
+/usr/include/openssl/evp.h:1357:22: note: declared here
+ 1357 | const struct dsa_st *EVP_PKEY_get0_DSA(const EVP_PKEY *pkey);
+      |                      ^~~~~~~~~~~~~~~~~
+src/openssl.c:5151:30: warning: passing argument 1 of 'DSA_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5151 |                 DSA_set0_key(EVP_PKEY_get0_DSA(pkey), NULL, i);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dsa.h:206:45: note: expected 'DSA *' {aka 'struct dsa_st *'} but argument is of type 'const struct dsa_st *'
+  206 | OSSL_DEPRECATEDIN_3_0 int DSA_set0_key(DSA *d, BIGNUM *pub_key,
+      |                                        ~~~~~^
+src/openssl.c:5156:17: warning: 'DH_set0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5156 |                 DH_set0_pqg(EVP_PKEY_get0_DH(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:259:27: note: declared here
+  259 | OSSL_DEPRECATEDIN_3_0 int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                           ^~~~~~~~~~~
+src/openssl.c:5156:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5156 |                 DH_set0_pqg(EVP_PKEY_get0_DH(pkey), i, NULL, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5156:29: warning: passing argument 1 of 'DH_set0_pqg' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5156 |                 DH_set0_pqg(EVP_PKEY_get0_DH(pkey), i, NULL, NULL);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dh.h:259:43: note: expected 'DH *' {aka 'struct dh_st *'} but argument is of type 'const struct dh_st *'
+  259 | OSSL_DEPRECATEDIN_3_0 int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                                       ~~~~^~
+src/openssl.c:5161:17: warning: 'DH_set0_pqg' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5161 |                 DH_set0_pqg(EVP_PKEY_get0_DH(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:259:27: note: declared here
+  259 | OSSL_DEPRECATEDIN_3_0 int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                           ^~~~~~~~~~~
+src/openssl.c:5161:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5161 |                 DH_set0_pqg(EVP_PKEY_get0_DH(pkey), NULL, NULL, i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5161:29: warning: passing argument 1 of 'DH_set0_pqg' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5161 |                 DH_set0_pqg(EVP_PKEY_get0_DH(pkey), NULL, NULL, i);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dh.h:259:43: note: expected 'DH *' {aka 'struct dh_st *'} but argument is of type 'const struct dh_st *'
+  259 | OSSL_DEPRECATEDIN_3_0 int DH_set0_pqg(DH *dh, BIGNUM *p, BIGNUM *q, BIGNUM *g);
+      |                                       ~~~~^~
+src/openssl.c:5166:17: warning: 'DH_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5166 |                 DH_set0_key(EVP_PKEY_get0_DH(pkey), i, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:262:27: note: declared here
+  262 | OSSL_DEPRECATEDIN_3_0 int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key);
+      |                           ^~~~~~~~~~~
+src/openssl.c:5166:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5166 |                 DH_set0_key(EVP_PKEY_get0_DH(pkey), i, NULL);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5166:29: warning: passing argument 1 of 'DH_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5166 |                 DH_set0_key(EVP_PKEY_get0_DH(pkey), i, NULL);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dh.h:262:43: note: expected 'DH *' {aka 'struct dh_st *'} but argument is of type 'const struct dh_st *'
+  262 | OSSL_DEPRECATEDIN_3_0 int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key);
+      |                                       ~~~~^~
+src/openssl.c:5171:17: warning: 'DH_set0_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5171 |                 DH_set0_key(EVP_PKEY_get0_DH(pkey), NULL, i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/dh.h:262:27: note: declared here
+  262 | OSSL_DEPRECATEDIN_3_0 int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key);
+      |                           ^~~~~~~~~~~
+src/openssl.c:5171:17: warning: 'EVP_PKEY_get0_DH' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5171 |                 DH_set0_key(EVP_PKEY_get0_DH(pkey), NULL, i);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/evp.h:1365:43: note: declared here
+ 1365 | OSSL_DEPRECATEDIN_3_0 const struct dh_st *EVP_PKEY_get0_DH(const EVP_PKEY *pkey);
+      |                                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5171:29: warning: passing argument 1 of 'DH_set0_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5171 |                 DH_set0_key(EVP_PKEY_get0_DH(pkey), NULL, i);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/dh.h:262:43: note: expected 'DH *' {aka 'struct dh_st *'} but argument is of type 'const struct dh_st *'
+  262 | OSSL_DEPRECATEDIN_3_0 int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key);
+      |                                       ~~~~^~
+src/openssl.c:5178:17: warning: 'EC_KEY_set_group' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5178 |                 if (!EC_KEY_set_group(EVP_PKEY_get0_EC_KEY(pkey), group))
+      |                 ^~
+/usr/include/openssl/ec.h:1042:27: note: declared here
+ 1042 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_group(EC_KEY *key, const EC_GROUP *group);
+      |                           ^~~~~~~~~~~~~~~~
+src/openssl.c:5178:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5178 |                 if (!EC_KEY_set_group(EVP_PKEY_get0_EC_KEY(pkey), group))
+      |                 ^~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5178:39: warning: passing argument 1 of 'EC_KEY_set_group' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5178 |                 if (!EC_KEY_set_group(EVP_PKEY_get0_EC_KEY(pkey), group))
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ec.h:1042:52: note: expected 'EC_KEY *' {aka 'struct ec_key_st *'} but argument is of type 'const struct ec_key_st *'
+ 1042 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_group(EC_KEY *key, const EC_GROUP *group);
+      |                                            ~~~~~~~~^~~
+src/openssl.c:5189:17: warning: 'EC_KEY_get0_group' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5189 |                 if (!(group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey))))
+      |                 ^~
+/usr/include/openssl/ec.h:1034:39: note: declared here
+ 1034 | OSSL_DEPRECATEDIN_3_0 const EC_GROUP *EC_KEY_get0_group(const EC_KEY *key);
+      |                                       ^~~~~~~~~~~~~~~~~
+src/openssl.c:5189:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5189 |                 if (!(group = EC_KEY_get0_group(EVP_PKEY_get0_EC_KEY(pkey))))
+      |                 ^~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5192:17: warning: 'EC_POINT_bn2point' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5192 |                 if (!(pub_key = EC_POINT_bn2point(group, n, NULL, getctx(L))))
+      |                 ^~
+/usr/include/openssl/ec.h:774:33: note: declared here
+  774 | OSSL_DEPRECATEDIN_3_0 EC_POINT *EC_POINT_bn2point(const EC_GROUP *,
+      |                                 ^~~~~~~~~~~~~~~~~
+src/openssl.c:5196:17: warning: 'EC_KEY_set_public_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5196 |                 okay = EC_KEY_set_public_key(EVP_PKEY_get0_EC_KEY(pkey), pub_key);
+      |                 ^~~~
+/usr/include/openssl/ec.h:1070:27: note: declared here
+ 1070 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_public_key(EC_KEY *key, const EC_POINT *pub);
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5196:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5196 |                 okay = EC_KEY_set_public_key(EVP_PKEY_get0_EC_KEY(pkey), pub_key);
+      |                 ^~~~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5196:46: warning: passing argument 1 of 'EC_KEY_set_public_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5196 |                 okay = EC_KEY_set_public_key(EVP_PKEY_get0_EC_KEY(pkey), pub_key);
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ec.h:1070:57: note: expected 'EC_KEY *' {aka 'struct ec_key_st *'} but argument is of type 'const struct ec_key_st *'
+ 1070 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_public_key(EC_KEY *key, const EC_POINT *pub);
+      |                                                 ~~~~~~~~^~~
+src/openssl.c:5207:17: warning: 'EC_KEY_set_private_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5207 |                 if (!EC_KEY_set_private_key(EVP_PKEY_get0_EC_KEY(pkey), n))
+      |                 ^~
+/usr/include/openssl/ec.h:1056:27: note: declared here
+ 1056 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_private_key(EC_KEY *key, const BIGNUM *prv);
+      |                           ^~~~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5207:17: warning: 'EVP_PKEY_get0_EC_KEY' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5207 |                 if (!EC_KEY_set_private_key(EVP_PKEY_get0_EC_KEY(pkey), n))
+      |                 ^~
+/usr/include/openssl/evp.h:1374:25: note: declared here
+ 1374 | const struct ec_key_st *EVP_PKEY_get0_EC_KEY(const EVP_PKEY *pkey);
+      |                         ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c:5207:45: warning: passing argument 1 of 'EC_KEY_set_private_key' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+ 5207 |                 if (!EC_KEY_set_private_key(EVP_PKEY_get0_EC_KEY(pkey), n))
+      |                                             ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ec.h:1056:58: note: expected 'EC_KEY *' {aka 'struct ec_key_st *'} but argument is of type 'const struct ec_key_st *'
+ 1056 | OSSL_DEPRECATEDIN_3_0 int EC_KEY_set_private_key(EC_KEY *key, const BIGNUM *prv);
+      |                                                  ~~~~~~~~^~~
+src/openssl.c: In function 'ecg_new':
+src/openssl.c:5533:33: warning: 'PEM_read_bio_ECPKParameters' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5533 |                                 goterr |= !(*group = PEM_read_bio_ECPKParameters(bio, NULL, 0, ""));
+      |                                 ^~~~~~
+/usr/include/openssl/pem.h:461:1: note: declared here
+  461 | DECLARE_PEM_rw_attr(OSSL_DEPRECATEDIN_3_0, ECPKParameters, EC_GROUP)
+      | ^~~~~~~~~~~~~~~~~~~
+src/openssl.c: In function 'ecg_toPEM':
+src/openssl.c:5579:9: warning: 'PEM_write_bio_ECPKParameters' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5579 |         if (!PEM_write_bio_ECPKParameters(bio, group))
+      |         ^~
+/usr/include/openssl/pem.h:461:1: note: declared here
+  461 | DECLARE_PEM_rw_attr(OSSL_DEPRECATEDIN_3_0, ECPKParameters, EC_GROUP)
+      | ^~~~~~~~~~~~~~~~~~~
+src/openssl.c: In function 'ecg_tostring':
+src/openssl.c:5598:17: warning: 'PEM_write_bio_ECPKParameters' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5598 |                 if (!PEM_write_bio_ECPKParameters(bio, group))
+      |                 ^~
+/usr/include/openssl/pem.h:461:1: note: declared here
+  461 | DECLARE_PEM_rw_attr(OSSL_DEPRECATEDIN_3_0, ECPKParameters, EC_GROUP)
+      | ^~~~~~~~~~~~~~~~~~~
+src/openssl.c:5607:17: warning: 'ECPKParameters_print' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5607 |                 if (!ECPKParameters_print(bio, group, indent))
+      |                 ^~
+/usr/include/openssl/ec.h:926:27: note: declared here
+  926 | OSSL_DEPRECATEDIN_3_0 int ECPKParameters_print(BIO *bp, const EC_GROUP *x,
+      |                           ^~~~~~~~~~~~~~~~~~~~
+src/openssl.c: In function 'ecg__gc':
+src/openssl.c:5628:17: warning: 'EC_GROUP_clear_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 5628 |                 EC_GROUP_clear_free(*ud);
+      |                 ^~~~~~~~~~~~~~~~~~~
+/usr/include/openssl/ec.h:176:28: note: declared here
+  176 | OSSL_DEPRECATEDIN_3_0 void EC_GROUP_clear_free(EC_GROUP *group);
+      |                            ^~~~~~~~~~~~~~~~~~~
+src/openssl.c: In function 'sx_setEphemeralKey':
+src/openssl.c:9613:17: warning: 'EVP_PKEY_get0' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 9613 |                 if (!(tmp = EVP_PKEY_get0(key)))
+      |                 ^~
+/usr/include/openssl/evp.h:1332:7: note: declared here
+ 1332 | void *EVP_PKEY_get0(const EVP_PKEY *pkey);
+      |       ^~~~~~~~~~~~~
+src/openssl.c:9621:17: warning: 'EVP_PKEY_get0' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 9621 |                 if (!(tmp = EVP_PKEY_get0(key)))
+      |                 ^~
+/usr/include/openssl/evp.h:1332:7: note: declared here
+ 1332 | void *EVP_PKEY_get0(const EVP_PKEY *pkey);
+      |       ^~~~~~~~~~~~~
+src/openssl.c:9629:17: warning: 'EVP_PKEY_get0' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+ 9629 |                 if (!(tmp = EVP_PKEY_get0(key)))
+      |                 ^~
+/usr/include/openssl/evp.h:1332:7: note: declared here
+ 1332 | void *EVP_PKEY_get0(const EVP_PKEY *pkey);
+      |       ^~~~~~~~~~~~~
+src/openssl.c: In function 'hmac_new':
+src/openssl.c:11778:9: warning: 'HMAC_CTX_new' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+11778 |         if (!(*ctx = HMAC_CTX_new()))
+      |         ^~
+In file included from /usr/include/openssl/ssl.h:37,
+                 from src/openssl.c:77:
+/usr/include/openssl/hmac.h:33:33: note: declared here
+   33 | OSSL_DEPRECATEDIN_3_0 HMAC_CTX *HMAC_CTX_new(void);
+      |                                 ^~~~~~~~~~~~
+src/openssl.c:11782:9: warning: 'HMAC_Init_ex' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+11782 |         if (!HMAC_Init_ex(*ctx, key, len, type, NULL))
+      |         ^~
+/usr/include/openssl/hmac.h:43:27: note: declared here
+   43 | OSSL_DEPRECATEDIN_3_0 int HMAC_Init_ex(HMAC_CTX *ctx, const void *key, int len,
+      |                           ^~~~~~~~~~~~
+src/openssl.c: In function 'hmac_update_':
+src/openssl.c:11808:17: warning: 'HMAC_Update' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+11808 |                 HMAC_Update(ctx, p, n);
+      |                 ^~~~~~~~~~~
+/usr/include/openssl/hmac.h:45:27: note: declared here
+   45 | OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+      |                           ^~~~~~~~~~~
+src/openssl.c: In function 'hmac_final':
+src/openssl.c:11831:9: warning: 'HMAC_Final' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+11831 |         HMAC_Final(ctx, hmac, &len);
+      |         ^~~~~~~~~~
+/usr/include/openssl/hmac.h:47:27: note: declared here
+   47 | OSSL_DEPRECATEDIN_3_0 int HMAC_Final(HMAC_CTX *ctx, unsigned char *md,
+      |                           ^~~~~~~~~~
+src/openssl.c: In function 'hmac__gc':
+src/openssl.c:11842:9: warning: 'HMAC_CTX_free' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+11842 |         HMAC_CTX_free(*ctx);
+      |         ^~~~~~~~~~~~~
+/usr/include/openssl/hmac.h:35:28: note: declared here
+   35 | OSSL_DEPRECATEDIN_3_0 void HMAC_CTX_free(HMAC_CTX *ctx);
+      |                            ^~~~~~~~~~~~~
+src/openssl.c: In function 'de5_string_to_key':
+src/openssl.c:12997:9: warning: 'DES_string_to_key' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+12997 |         DES_string_to_key(luaL_checkstring(L, 1), &key);
+      |         ^~~~~~~~~~~~~~~~~
+In file included from src/openssl.c:80:
+/usr/include/openssl/des.h:193:28: note: declared here
+  193 | OSSL_DEPRECATEDIN_3_0 void DES_string_to_key(const char *str, DES_cblock *key);
+      |                            ^~~~~~~~~~~~~~~~~
+src/openssl.c: In function 'de5_set_odd_parity':
+src/openssl.c:13012:9: warning: 'DES_set_odd_parity' is deprecated: Since OpenSSL 3.0 [-Wdeprecated-declarations]
+13012 |         DES_set_odd_parity(&key);
+      |         ^~~~~~~~~~~~~~~~~~
+/usr/include/openssl/des.h:176:28: note: declared here
+  176 | OSSL_DEPRECATEDIN_3_0 void DES_set_odd_parity(DES_cblock *key);
+      |                            ^~~~~~~~~~~~~~~~~~
+
+luaossl 20260910-0 depends on lua (5.4-1 provided by VM)
+Applying patch config.h.diff...
+gcc-14 -O2 -fPIC -std=gnu23 -I/usr/include/lua5.4 -c src/openssl.c -o src/openssl.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+gcc-14 -O2 -fPIC -std=gnu23 -I/usr/include/lua5.4 -c vendor/compat53/c-api/compat-5.3.c -o vendor/compat53/c-api/compat-5.3.o -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -I/usr/include -I/usr/include
+gcc-14 -shared -o _openssl.so src/openssl.o vendor/compat53/c-api/compat-5.3.o -L/usr/lib/x86_64-linux-gnu -L/usr/lib/x86_64-linux-gnu -Wl,-rpath,/usr/lib/x86_64-linux-gnu -Wl,-rpath,/usr/lib/x86_64-linux-gnu -lssl -lcrypto -lpthread -lm -ldl
+No existing manifest. Attempting to rebuild...
+luaossl 20260910-0 is now installed in /srv/verify/work/rt-host/tree-fixed (license: MIT/X11)
+

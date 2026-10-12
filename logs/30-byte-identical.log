@@ -1,0 +1,48 @@
+=== START 2026-10-12T07:14:40Z byte-identical objects
+gcc-14 (Ubuntu 14.2.0-4ubuntu2~24.04.1) 14.2.0
+Ubuntu clang version 18.1.3 (1ubuntu1)
+OpenSSL headers: # define OPENSSL_VERSION_TEXT "OpenSSL 3.0.13 30 Jan 2024"
+e5cd207 gcc-14   gnu17  cwd=/srv/verify/work/same/luaossl : sha256 606a2dc5f4982c725544a8435764f0785b4b9308739000c147154555040423dd  size 307144
+e5cd207 gcc-14   gnu23  cwd=/srv/verify/work/same/luaossl : compile FAILED (exit 1)
+e5cd207 clang-18 gnu17  cwd=/srv/verify/work/same/luaossl : sha256 009d37ae5cec38562d0c264c7988c90c6a925f2150ce2626af01c9ffdcebdf64  size 310992
+e5cd207 clang-18 gnu23  cwd=/srv/verify/work/same/luaossl : compile FAILED (exit 1)
+63f211b gcc-14   gnu17  cwd=/srv/verify/work/same/luaossl : sha256 606a2dc5f4982c725544a8435764f0785b4b9308739000c147154555040423dd  size 307144
+63f211b gcc-14   gnu23  cwd=/srv/verify/work/same/luaossl : sha256 8b9e5c7d4291b424c10427e18258115f3347812384a8d7f68c89ec0915a016f8  size 307048
+63f211b clang-18 gnu17  cwd=/srv/verify/work/same/luaossl : sha256 009d37ae5cec38562d0c264c7988c90c6a925f2150ce2626af01c9ffdcebdf64  size 310992
+63f211b clang-18 gnu23  cwd=/srv/verify/work/same/luaossl : sha256 009d37ae5cec38562d0c264c7988c90c6a925f2150ce2626af01c9ffdcebdf64  size 310992
+950e54e gcc-14   gnu17  cwd=/srv/verify/work/same/luaossl : sha256 606a2dc5f4982c725544a8435764f0785b4b9308739000c147154555040423dd  size 307144
+950e54e gcc-14   gnu23  cwd=/srv/verify/work/same/luaossl : sha256 8b9e5c7d4291b424c10427e18258115f3347812384a8d7f68c89ec0915a016f8  size 307048
+950e54e clang-18 gnu17  cwd=/srv/verify/work/same/luaossl : sha256 009d37ae5cec38562d0c264c7988c90c6a925f2150ce2626af01c9ffdcebdf64  size 310992
+950e54e clang-18 gnu23  cwd=/srv/verify/work/same/luaossl : sha256 009d37ae5cec38562d0c264c7988c90c6a925f2150ce2626af01c9ffdcebdf64  size 310992
+command: <cc> -O2 -fPIC -std=<std> -I/usr/include/lua5.4 -D_REENTRANT -D_THREAD_SAFE -DCOMPAT53_PREFIX=luaossl -D_GNU_SOURCE -c src/openssl.c -o openssl.o
+
+--- comparisons (cmp exit 0 = byte-for-byte identical)
+e5cd207-gcc-14-gnu17     vs 63f211b-gcc-14-gnu17     cmp exit 0 IDENTICAL
+e5cd207-gcc-14-gnu17     vs 950e54e-gcc-14-gnu17     cmp exit 0 IDENTICAL
+63f211b-gcc-14-gnu17     vs 950e54e-gcc-14-gnu17     cmp exit 0 IDENTICAL
+63f211b-gcc-14-gnu23     vs 950e54e-gcc-14-gnu23     cmp exit 0 IDENTICAL
+950e54e-gcc-14-gnu17     vs 950e54e-gcc-14-gnu23     cmp exit 1 /srv/verify/work/objs/950e54e-gcc-14-gnu17.o /srv/verify/work/objs/950e54e-gcc-14-gnu23.o differ: char 41, line 1
+e5cd207-clang-18-gnu17   vs 63f211b-clang-18-gnu17   cmp exit 0 IDENTICAL
+e5cd207-clang-18-gnu17   vs 950e54e-clang-18-gnu17   cmp exit 0 IDENTICAL
+63f211b-clang-18-gnu17   vs 950e54e-clang-18-gnu17   cmp exit 0 IDENTICAL
+63f211b-clang-18-gnu23   vs 950e54e-clang-18-gnu23   cmp exit 0 IDENTICAL
+950e54e-clang-18-gnu17   vs 950e54e-clang-18-gnu23   cmp exit 0 IDENTICAL
+
+--- for reference: or_toPEM in the 950e54e gcc-14 gnu17 object calls PEM_ASN1_write_bio (the #ifdef branch)
+00000000000071f0 <or_toPEM>:
+			71f9: R_X86_64_PC32	.LC2-0x4
+    7219:	call   721e <or_toPEM+0x2e>
+			721a: R_X86_64_PLT32	luaL_checkudata-0x4
+    7224:	call   7060 <getbio>
+			7247: R_X86_64_PC32	.LC150-0x4
+    7250:	call   7255 <or_toPEM+0x65>
+			7251: R_X86_64_PLT32	PEM_ASN1_write_bio-0x4
+    726a:	call   726f <or_toPEM+0x7f>
+			726b: R_X86_64_PLT32	BIO_ctrl-0x4
+    7279:	call   727e <or_toPEM+0x8e>
+			727a: R_X86_64_PLT32	lua_pushlstring-0x4
+			729f: R_X86_64_PC32	.LC151-0x4
+    72a9:	call   3b90 <auxL_error.isra.0>
+    72ae:	call   72b3 <or_toPEM+0xc3>
+			72af: R_X86_64_PLT32	__stack_chk_fail-0x4
+=== END 2026-10-12T07:14:58Z byte-identical objects

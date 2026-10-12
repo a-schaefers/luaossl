@@ -1,0 +1,26 @@
+=== START 2026-10-12T07:39:52Z source scan
+--- macros with an old-style cast in /usr/include/openssl ("OpenSSL 3.0.13 30 Jan 2024")
+7 macros: PEM_read_bio_OCSP_REQUEST PEM_read_bio_OCSP_RESPONSE PEM_write_bio_OCSP_REQUEST PEM_write_bio_OCSP_RESPONSE d2i_DHparams_fp d2i_DHxparams_fp d2i_DSAparams_fp 
+--- macros with an old-style cast in /srv/verify/src/openssl-1.1.1w/include/openssl ("OpenSSL 1.1.1w  11 Sep 2023")
+8 macros: OCSP_CERTSTATUS_dup PEM_read_bio_OCSP_REQUEST PEM_read_bio_OCSP_RESPONSE PEM_write_bio_OCSP_REQUEST PEM_write_bio_OCSP_RESPONSE d2i_DHparams_fp d2i_DHxparams_fp d2i_DSAparams_fp 
+
+--- uses in luaossl src/openssl.c at e5cd207 (e5cd207ccacf2b4201c9d1f3bc2ebb6b4b673e32)
+PEM_write_bio_OCSP_RESPONSE:
+    12454:	if (!PEM_write_bio_OCSP_RESPONSE(bio, resp))
+macros used: 1
+old-style casts in luaossl's own code, comment lines excluded: 0
+
+--- uses in luaossl src/openssl.c at 63f211b (63f211b056405835235db7fc2c4699e96eb53681)
+PEM_write_bio_OCSP_RESPONSE:
+    12455:	 * Not PEM_write_bio_OCSP_RESPONSE(): LibreSSL, and OpenSSL before
+macros used: 1
+old-style casts in luaossl's own code, comment lines excluded: 0
+
+--- uses in luaossl src/openssl.c at 950e54e (950e54e40733fc3b34becad4d3a00ec3a3f562eb)
+PEM_write_bio_OCSP_RESPONSE:
+    12456:	 * define PEM_write_bio_OCSP_RESPONSE() as a macro with an (int (*)())
+    12460:#ifdef PEM_write_bio_OCSP_RESPONSE
+    12463:	if (!PEM_write_bio_OCSP_RESPONSE(bio, resp))
+macros used: 1
+old-style casts in luaossl's own code, comment lines excluded: 0
+=== END 2026-10-12T07:39:53Z source scan

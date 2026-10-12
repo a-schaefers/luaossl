@@ -1,0 +1,14 @@
+=== START 2026-10-12T07:33:53Z warnings: patched gnu23 vs unpatched gnu17
+e5cd207 gnu17 vs 63f211b gnu23  gcc-14    1.1.1w  SAME (407 vs 407 warnings)
+e5cd207 gnu17 vs 63f211b gnu23  gcc-14    3.0.13  SAME (543 vs 543 warnings)
+e5cd207 gnu17 vs 63f211b gnu23  gcc-14    4.0.3   SAME (578 vs 578 warnings)
+e5cd207 gnu17 vs 63f211b gnu23  clang-18  1.1.1w  SAME (392 vs 392 warnings)
+e5cd207 gnu17 vs 63f211b gnu23  clang-18  3.0.13  SAME (543 vs 543 warnings)
+e5cd207 gnu17 vs 63f211b gnu23  clang-18  4.0.3   SAME (563 vs 563 warnings)
+e5cd207 gnu17 vs 950e54e gnu23  gcc-14    1.1.1w  SAME (407 vs 407 warnings)
+e5cd207 gnu17 vs 950e54e gnu23  gcc-14    3.0.13  SAME (543 vs 543 warnings)
+e5cd207 gnu17 vs 950e54e gnu23  gcc-14    4.0.3   SAME (578 vs 578 warnings)
+e5cd207 gnu17 vs 950e54e gnu23  clang-18  1.1.1w  SAME (392 vs 392 warnings)
+e5cd207 gnu17 vs 950e54e gnu23  clang-18  3.0.13  SAME (543 vs 543 warnings)
+e5cd207 gnu17 vs 950e54e gnu23  clang-18  4.0.3   SAME (563 vs 563 warnings)
+=== END 2026-10-12T07:33:53Z warnings: patched gnu23 vs unpatched gnu17

@@ -1,0 +1,128 @@
+=== START 2026-10-12T07:32:52Z OpenSSL facts, part 2
+--- (a) 1.0.2 / 1.1.0 / 1.1.1 release tags (header: crypto/ocsp/ocsp.h in 1.0.2, include/openssl/ocsp.h after)
+tag              commit                                     result                     git blob of header
+OpenSSL_1_0_2    4ac0329582829f5378d8078c8d314ad37db87736   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2a   3df69d3aefde7671053d4e3c242b228e5d79c83f   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2b   7b560c174dcd569795f5be66e0c091d1be440614   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2c   0ee5fcde06827b041023e5a596d58da98e53740c   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2d   33dd08320648ac71d7d9d732be774ed3818dccc5   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2e   bfe07df40c13ea2564bb4577620180e3f4849e23   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2f   95605f3ae1ec8857e8cb612ce35805a3b0207d21   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2g   902f3f50d051dfd6ebf009d352aaf581195caabf   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2h   5dd94f1847c744929a3bd24819f1c99644bb18c7   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2i   32c130160f7dac2cef5d0e30d94b335e4a87104d   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2j   e216bf9d7ca761718f34e8b3094fcb32c7a143e4   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2k   081314d07705aa58912845c213a48414d8f616a9   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2l   b3a3bab05ce32964ee32cbfe97cbe3edee5cf4a9   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2m   8b1549a153a62e9878327d05aa3b6622b416ec10   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2n   e5bba24cd8bb3e5127a578b85c6edf013a38ea6d   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2o   3ce7bc40a3c48da1c96c2d04c10045bd797c6aa3   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2p   e71ebf275da66dfd601c92e0e80a35114c32f6f8   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2q   5707219a6aae8052cb98aa361d115be01b8fd894   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2r   b34cf4eb616446a1ee7bd0db0a625edf25047342   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2s   cf9143f945a67f3d540e2704fdbdf1bdc985233d   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2t   cd7c7fc20b9feeb900632389401f514ac6b82f16   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_0_2u   e818b74be2170fbe957a07b0da4401c2b694b3b8   OLD cast (int (*)())       ca2ee76dce472fbb0978e596bc7699fe05596746
+OpenSSL_1_1_0    abd30777cc72029e8a44e4b67201cae8ed3d19c1   OLD cast (int (*)())       119e59149db3eb4eaaebce9f62051609116bd05b
+OpenSSL_1_1_0a   ac2c44c6289f9716de4c4beeb284a818eacde517   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0b   16c34d4f74e16443cfdc99f2a49ebb1ba3c37db3   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0c   91eaf079b7430cb4ebb7f3ccabe74aa383b27c4e   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0d   8a4d96ac8227f39043735faa9e9a30e22818f5e8   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0e   0453163e9a9052884cce288ff3e2acb77725a239   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0f   577d7010c6ffa98e8dc61d8826693db9d8f57bd5   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0g   b2758a2292aceda93e9f44c219b94fe21bb9a650   OLD cast (int (*)())       08debc5b78e9875be28743b4b90316846e7cebef
+OpenSSL_1_1_0h   d4e4bd2a8163f355fa8a3884077eaec7adc75ff7   OLD cast (int (*)())       90ebe5ccd05e49af4b097ae3634e71a46a9ad97c
+OpenSSL_1_1_0i   97c0959f27b294fe1eb10b547145ebef2524b896   OLD cast (int (*)())       90ebe5ccd05e49af4b097ae3634e71a46a9ad97c
+OpenSSL_1_1_0j   74f2d9c1ec5f5510e1d3da5a9f03c28df0977762   OLD cast (int (*)())       ba1b97315bf8b34dc238cb136a5bfc0474342b03
+OpenSSL_1_1_0k   fb83aaf6a163438149570b344c6c75a6aa977ae9   OLD cast (int (*)())       ba1b97315bf8b34dc238cb136a5bfc0474342b03
+OpenSSL_1_1_0l   7ea5bd2b52d0e81eaef3d109b3b12545306f201c   OLD cast (int (*)())       ba1b97315bf8b34dc238cb136a5bfc0474342b03
+OpenSSL_1_1_1    1708e3e85b4a86bae26860aa5d2913fc8eff6086   OLD cast (int (*)())       937b32271b212d4f759e5149b5e0e2a58bca4e3a
+OpenSSL_1_1_1a   d1c28d791a7391a8dc101713cd8646df96491d03   OLD cast (int (*)())       0a17166b5bf6a8876961588ae483626032a71e55
+OpenSSL_1_1_1b   50eaac9f3337667259de725451f201e784599687   OLD cast (int (*)())       0a17166b5bf6a8876961588ae483626032a71e55
+OpenSSL_1_1_1c   97ace46e11dba4c4c2b7cb67140b6ec152cfaaf4   OLD cast (int (*)())       8582fe1ee1a4dd438a9635ee63104165bd1953ab
+OpenSSL_1_1_1d   894da2fb7ed5d314ee5c2fc9fd2d9b8b74111596   OLD cast (int (*)())       8582fe1ee1a4dd438a9635ee63104165bd1953ab
+OpenSSL_1_1_1e   a61eba4814fb748ad67e90e81c005ffb09b67d3d   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1f   36eadf1f84daa965041cce410b4ff32cbda4ef08   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1g   e2e09d9fba1187f8d6aafaa34d4172f56f1ffb72   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1h   f123043faa15965c34947670ff3d3a7005d6bdb4   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1i   90cebd1b216e0a160fcfd8e0eddca47dad47c183   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1j   52c587d60be67c337364b830dd3fdc15404a2f04   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1k   fd78df59b0f656aefe96e39533130454aa957c00   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1l   fb047ebc87b18bdc4cf9ddee9ee1f5ed93e56aff   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1m   ac3cef223a4c61d6bee34527b6d4c8c6432494a7   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1n   d82e959e621a3d597f1e0d50ff8c2d8b96915fd7   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1o   ca2e0784d2c38edcefd5d68028f4d954bd8faddb   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1p   8aaca20cf9996257d1ce2e6f4d3059b3698dde3d   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1q   29708a562a1887a91de0fa6ca668c71871accde9   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1r   fbda8a9e3b6266da377a6f57d597d657257d9cff   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1s   129058165d195e43a0ad10111b0c2e29bdf65980   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1t   830bf8e1e4749ad65c51b6a1d0d769ae689404ba   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1u   70c2912f635aac8ab28629a2b5ea0c09740d2bda   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1v   9398e4038c27d5ef15111c61e984d4d2be8a52a8   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+OpenSSL_1_1_1w   e04bd3433fd84e1861bf258ea37928d9845e6a86   OLD cast (int (*)())       4d759a49de438022e4aea82605364d3959aa14db
+
+--- (b) the commit that changed the cast on each release branch
+
+## openssl-3.0.18..openssl-3.0.19
+   b09d1e16d20de9a3bb94985de6852909c91419a7
+   author Igor Ustinov, 2025-11-02T17:37:00+01:00; committed 2025-11-04T16:04:02+01:00
+   subject: Modernize header macros for C23 compatibility
+   Fixes #27938
+   (Merged from https://github.com/openssl/openssl/pull/29048)
+   (cherry picked from commit 0b7afd6d303d150c13c04f66e77fcbcdaeec2a84)
+    include/openssl/dh.h      | 12 ++++++------
+    include/openssl/dsa.h     |  6 +++---
+    include/openssl/ocsp.h.in |  8 ++++----
+    3 files changed, 13 insertions(+), 13 deletions(-)
+
+## openssl-3.3.5..openssl-3.3.6
+   f264411725a79f58bcac07f740f4d46299dd0989
+   author Igor Ustinov, 2025-11-02T17:37:00+01:00; committed 2025-11-04T16:03:46+01:00
+   subject: Modernize header macros for C23 compatibility
+   Fixes #27938
+   (Merged from https://github.com/openssl/openssl/pull/29048)
+   (cherry picked from commit 0b7afd6d303d150c13c04f66e77fcbcdaeec2a84)
+    include/openssl/dh.h      | 12 ++++++------
+    include/openssl/dsa.h     |  6 +++---
+    include/openssl/ocsp.h.in |  8 ++++----
+    3 files changed, 13 insertions(+), 13 deletions(-)
+
+## openssl-3.4.3..openssl-3.4.4
+   72ed16cb792a3548a4bd70d197cff2fbdc094a86
+   author Igor Ustinov, 2025-11-02T17:37:00+01:00; committed 2025-11-04T16:03:38+01:00
+   subject: Modernize header macros for C23 compatibility
+   Fixes #27938
+   (Merged from https://github.com/openssl/openssl/pull/29048)
+   (cherry picked from commit 0b7afd6d303d150c13c04f66e77fcbcdaeec2a84)
+    include/openssl/dh.h      | 12 ++++++------
+    include/openssl/dsa.h     |  6 +++---
+    include/openssl/ocsp.h.in |  8 ++++----
+    3 files changed, 13 insertions(+), 13 deletions(-)
+
+## openssl-3.5.4..openssl-3.5.5
+   a36971a65fecccef21a5ea14a651f3a402f1bfb8
+   author Igor Ustinov, 2025-11-02T17:37:00+01:00; committed 2025-11-04T16:03:30+01:00
+   subject: Modernize header macros for C23 compatibility
+   Fixes #27938
+   (Merged from https://github.com/openssl/openssl/pull/29048)
+   (cherry picked from commit 0b7afd6d303d150c13c04f66e77fcbcdaeec2a84)
+    include/openssl/dh.h      | 12 ++++++------
+    include/openssl/dsa.h     |  6 +++---
+    include/openssl/ocsp.h.in |  8 ++++----
+    3 files changed, 13 insertions(+), 13 deletions(-)
+
+## openssl-3.6.0..openssl-3.6.1
+   8005730a2d9d2c1e4bd2f20e57707bff6f0a5108
+   author Igor Ustinov, 2025-11-02T17:37:00+01:00; committed 2025-11-04T16:03:14+01:00
+   subject: Modernize header macros for C23 compatibility
+   Fixes #27938
+   (Merged from https://github.com/openssl/openssl/pull/29048)
+   (cherry picked from commit 0b7afd6d303d150c13c04f66e77fcbcdaeec2a84)
+    include/openssl/dh.h      | 12 ++++++------
+    include/openssl/dsa.h     |  6 +++---
+    include/openssl/ocsp.h.in |  8 ++++----
+    3 files changed, 13 insertions(+), 13 deletions(-)
+
+--- master's original for comparison
+   0b7afd6d303d150c13c04f66e77fcbcdaeec2a84  Modernize header macros for C23 compatibility  (committed 2025-11-04T16:02:11+01:00)
+=== END 2026-10-12T07:33:05Z OpenSSL facts, part 2

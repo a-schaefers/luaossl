@@ -1,0 +1,72 @@
+=== START 2026-10-12T07:14:58Z #else branch check
+gcc-14 (Ubuntu 14.2.0-4ubuntu2~24.04.1) 14.2.0
+Ubuntu clang version 18.1.3 (1ubuntu1)
+
+######## variant: control   (src/openssl.c around or_toPEM:)
+12443-} /* or__tostring() */
+12444-
+12445-
+12446:static int or_toPEM(lua_State *L) {
+12447-	OCSP_RESPONSE *resp = checksimple(L, 1, OCSP_RESPONSE_CLASS);
+12448-	BIO *bio = getbio(L);
+12449-	size_t len;
+12450-	char *bytes;
+12451-
+12452-	/*
+12453-	 * LibreSSL, and OpenSSL before 3.0.19/3.3.6/3.4.4/3.5.5/3.6.1/4.0.0,
+12454-	 * define PEM_write_bio_OCSP_RESPONSE() as a macro with an (int (*)())
+12455-	 * cast, which C23 reads as (int (*)(void)), so the call fails to
+12456-	 * compile. While it's a macro, use what the fixed macro expands to.
+12457-	 */
+12458-#ifdef PEM_write_bio_OCSP_RESPONSE
+12459-	if (!PEM_ASN1_write_bio((i2d_of_void *)i2d_OCSP_RESPONSE, PEM_STRING_OCSP_RESPONSE, bio, (char *)resp, NULL, NULL, 0, NULL, NULL))
+12460-#else
+12461-	if (!PEM_write_bio_OCSP_RESPONSE(bio, resp))
+12462-#endif
+control gcc-14   gnu17  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control gcc-14   gnu17  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control gcc-14   gnu23  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control gcc-14   gnu23  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control clang-18 gnu17  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control clang-18 gnu17  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control clang-18 gnu23  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+control clang-18 gnu23  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 0, PEM_ASN1_write_bio: 1 | nm: (no symbol)
+
+######## variant: mock   (src/openssl.c around or_toPEM:)
+12446-#undef PEM_write_bio_OCSP_RESPONSE
+12447-int PEM_write_bio_OCSP_RESPONSE(BIO *bp, const OCSP_RESPONSE *o);
+12448-
+12449:static int or_toPEM(lua_State *L) {
+12450-	OCSP_RESPONSE *resp = checksimple(L, 1, OCSP_RESPONSE_CLASS);
+12451-	BIO *bio = getbio(L);
+12452-	size_t len;
+12453-	char *bytes;
+12454-
+12455-	/*
+12456-	 * LibreSSL, and OpenSSL before 3.0.19/3.3.6/3.4.4/3.5.5/3.6.1/4.0.0,
+12457-	 * define PEM_write_bio_OCSP_RESPONSE() as a macro with an (int (*)())
+12458-	 * cast, which C23 reads as (int (*)(void)), so the call fails to
+12459-	 * compile. While it's a macro, use what the fixed macro expands to.
+12460-	 */
+12461-#ifdef PEM_write_bio_OCSP_RESPONSE
+12462-	if (!PEM_ASN1_write_bio((i2d_of_void *)i2d_OCSP_RESPONSE, PEM_STRING_OCSP_RESPONSE, bio, (char *)resp, NULL, NULL, 0, NULL, NULL))
+12463-#else
+12464-	if (!PEM_write_bio_OCSP_RESPONSE(bio, resp))
+12465-#endif
+mock    gcc-14   gnu17  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    gcc-14   gnu17  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    gcc-14   gnu23  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    gcc-14   gnu23  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    clang-18 gnu17  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    clang-18 gnu17  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    clang-18 gnu23  3.0.13 exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+mock    clang-18 gnu23  4.0.3  exit=0 errors=0 | or_toPEM calls PEM_write_bio_OCSP_RESPONSE: 1, PEM_ASN1_write_bio: 0 | nm: U PEM_write_bio_OCSP_RESPONSE
+
+--- or_toPEM disassembly, mock variant, last build (clang-18 gnu23, OpenSSL 4.0.3 headers):
+0000000000013760 <or_toPEM>:
+			13779: R_X86_64_PLT32	luaL_checkudata-0x4
+			13792: R_X86_64_PLT32	PEM_write_bio_OCSP_RESPONSE-0x4
+			137aa: R_X86_64_PLT32	BIO_ctrl-0x4
+			137ba: R_X86_64_PLT32	lua_pushlstring-0x4
+			137e5: R_X86_64_PLT32	lua_error-0x4
+=== END 2026-10-12T07:15:40Z #else branch check
